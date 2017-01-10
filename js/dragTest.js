@@ -33,7 +33,6 @@ function drop(event) {
 
 function drop_outside(event) {
     if (inAutoDisplay == 0) {
-
         var offset = event.dataTransfer.getData("text").split(',');
         var dm = document.getElementById(offset[2]);
         dm.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
