@@ -2,13 +2,29 @@
 <html>
 	<head>
 		<title>Espace de travail</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/buttons.css" />
+		<script type="text/javascript" src="js/buttons.js"></script>
 	</head>
 	<body>
 		<div class="test">
 			<ul>
 				<li><a href="html/testInteract.html">Interaction</a></li>
-				<li><a href="html/postIt.html">Post It</a></li>
 			</ul>
+		</div>
+		<div class="boutons">
+			<form>
+				<button class="button" title="trash" onclick="Trash()"><img src="image/buttons/trash.png"/></button>
+				<button class="button" title="resize" onclick="Resize()"><img src="image/buttons/resize.png"/></button>
+				<button class="button" title="full screen" onclick="FullScreen()"><img src="image/buttons/fullScreen.png"/></button>
+				<button class="button" title="turn" onclick="Turn()"><img src="image/buttons/turn.png"/></button>
+				<button class="button" title="full turn" onclick="FullTurn()"><img src="image/buttons/fullTurn.png"/></button>
+				<button class="button" title="save" onclick="Save()"><img src="image/buttons/save.png"/></button>
+				<button class="button" title="screen shot" onclick="ScreenShot()"><img src="image/buttons/screenShot.png"/></button>
+				<button class="button" title="close" onclick="Close()"><img src="image/buttons/close.png"/></button>
+				<button class="button" title="move" onclick="Move()"><img src="image/buttons/move.png"/></button>
+
+			</form>
 		</div>
 	</body>
 </html>
