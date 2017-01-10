@@ -3,15 +3,23 @@
 <head>
   <meta charset="utf-8">
   <title>Titre de la page</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="../css/post-it.css">
 </head>
 <body>
+    <img src="../image/postit.jpg" onclick="createNew()"/>
+    <div id='formulaire'></div>
+    <div id='font'></div>
+
+  <script>
+ var number=0;
+ content= "<textarea type=\"text\"> </textarea>";
+ function createNew() {
+        number = number + 1;
+        document.getElementById('formulaire').innerHTML += content;
+  }
 
 
 
-
-
-
+  </script>
 </body>
 </html>
