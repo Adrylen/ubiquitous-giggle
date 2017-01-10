@@ -1,0 +1,22 @@
+#drag1 {
+    position: absolute;
+    padding: 10px;
+    border: 2px solid #aaaaaa;
+    /*left: 0;
+    top: 0;*/
+}
+
+#div1 {
+    width: 1300px;
+    height: 1300px;
+    padding: 10px;
+    border: 2px solid #aaaaaa;
+}
+
+#div2 {
+    text-align: end;
+    width: 450px;
+    height: 500px;
+    padding: 10px;
+    border: 2px solid #aaaaaa;
+}
