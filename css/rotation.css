@@ -1,0 +1,28 @@
+.rotated-square
+{
+	width: 20em;
+	height: 15em;
+	background-color: #000088;
+	color: #bbbbbb;
+	margin: 10% auto auto auto;
+}
+
+.rotated-square #image
+{
+	display: block;
+}
+
+.rotated-square #image img
+{
+	margin: 1% 0% 0% 93%;
+}
+
+div
+{
+	/*
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	*/
+}

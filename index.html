@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta http-equiv="content-type" charset="utf-8" />
 		<title>Espace de travail</title>
-		<meta charset="utf-8" />
 		<link rel="stylesheet" href="css/buttons.css" />
+		<link rel="stylesheet" href="css/master.css" />
 		<script type="text/javascript" src="js/buttons.js"></script>
+		<script type="text/javascript" src="js/dragTest.js"></script>
 	</head>
 	<body>
-		<div class="boutons">
-			<form>
-				<button class="button" title="trash" onclick="Trash()"><img src="image/buttons/trash.png"/></button>
-				<button class="button" title="resize" onclick="Resize()"><img src="image/buttons/resize.png"/></button>
-				<button class="button" title="full screen" onclick="FullScreen()"><img src="image/buttons/fullScreen.png"/></button>
-				<button class="button" title="turn" onclick="Turn()"><img src="image/buttons/turn.png"/></button>
-				<button class="button" title="full turn" onclick="FullTurn()"><img src="image/buttons/fullTurn.png"/></button>
-				<button class="button" title="save" onclick="Save()"><img src="image/buttons/save.png"/></button>
-				<button class="button" title="screen shot" onclick="ScreenShot()"><img src="image/buttons/screenShot.png"/></button>
-				<button class="button" title="close" onclick="Close()"><img src="image/buttons/close.png"/></button>
-				<button class="button" title="move" onclick="Move()"><img src="image/buttons/move.png"/></button>
+		<div id="page" ondrop="drop_outside(event)" ondragover="allowDrop(event)">
+			<div class="boutons">
+				<form>
+					<button class="button" title="trash" onclick="Trash()"><img src="image/buttons/trash.png"/></button>
+					<button class="button" title="resize" onclick="Resize()"><img src="image/buttons/resize.png"/></button>
+					<button class="button" title="full screen" onclick="FullScreen()"><img src="image/buttons/fullScreen.png"/></button>
+					<button class="button" title="turn" onclick="Turn()"><img src="image/buttons/turn.png"/></button>
+					<button class="button" title="full turn" onclick="FullTurn()"><img src="image/buttons/fullTurn.png"/></button>
+					<button class="button" title="save" onclick="Save()"><img src="image/buttons/save.png"/></button>
+					<button class="button" title="screen shot" onclick="ScreenShot()"><img src="image/buttons/screenShot.png"/></button>
+					<button class="button" title="close" onclick="Close()"><img src="image/buttons/close.png"/></button>
+					<button class="button" title="move" onclick="Move()"><img src="image/buttons/move.png"/></button>
 
-			</form>
+				</form>
+			</div>
+			<div id="drag1" draggable="true" ondragstart="drag(event)">
+					<input type="text">
+			</div>
+			<div id="resizeAuto" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="test">
+				<ul>
+					<li><a href="html/postIt.html">Post It</a></li>
+				</ul>
+			</div>
 		</div>
+		<!--
+			<script type="text/javascript" src="js/rotation.js"></script>
+		-->
 	</body>
 </html>
