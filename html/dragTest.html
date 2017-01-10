@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>TestDrag</title>
+    <link rel="stylesheet" href="../css/dragTestScreen.css" type="text/css" />
+    <script type="text/javascript" src="../js/dragTest.js"></script>
+</head>
+
+<body>
+    <div id="div1" ondrop="drop_outside(event)" ondragover="allowDrop(event)">
+        <p>Drag the pika!</p>
+
+        <div id="drag1" src="../image/pika.png" draggable="true" ondragstart="drag(event)">
+            <img src="../image/pika.png">
+            <p> Test </p>
+        </div>
+        <br>
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+</body>
+
+</html>
