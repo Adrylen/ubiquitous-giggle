@@ -23,8 +23,8 @@ function drop(event) {
         dm.style.width = "450px";
         dm.style.height = "400px";
         dm.className = "intoAuto";
-        xBlock = document.getElementById("div2").offsetLeft;
-        yBlock = document.getElementById("div2").offsetTop;
+        xBlock = document.getElementById("resizeAuto").offsetLeft;
+        yBlock = document.getElementById("resizeAuto").offsetTop;
         dm.style.left = xBlock + 'px';
         dm.style.top = yBlock + 'px';
         event.target.appendChild(document.getElementById(offset[2]));

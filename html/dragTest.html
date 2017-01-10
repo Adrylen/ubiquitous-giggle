@@ -12,9 +12,12 @@
     <div id="div1" ondrop="drop_outside(event)" ondragover="allowDrop(event)">
         <p>Drag the pika!</p>
 
-        <div id="drag1" src="../image/pika.png" draggable="true" ondragstart="drag(event)">
+        <!--<div id="drag1" src="../image/pika.png" draggable="true" ondragstart="drag(event)">
             <img src="../image/pika.png">
             <p> Test </p>
+        </div>-->
+        <div id="drag1" draggable="true" ondragstart="drag(event)">
+            <input type="text">
         </div>
         <br>
         <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
