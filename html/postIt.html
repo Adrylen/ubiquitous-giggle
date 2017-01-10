@@ -3,10 +3,24 @@
 <head>
   <meta charset="utf-8">
   <title>Titre de la page</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="../css/post-it.css">
+  <script type="text/javascript" src="../js/dragTest.js"></script>
+
 </head>
 <body>
-  
+  <div id="page" ondrop="drop_outside(event)" ondragover="allowDrop(event)">
+
+    <img src="../image/postit.jpg" onclick="createNew()"/>
+
+  <script>
+    var number=0;
+    function createNew() {
+      number = number + 1;
+      content= "<div id=\"postIt"+number+"\" draggable=\"true\" ondragstart=\"drag(event)\" style=\"position:absolute; display:inline-block; border:solid #FFB000 1%; background-color:#F0E000;padding:10px;  \"> <textarea type=\"text\"  > </textarea> </div>";
+      document.getElementById('page').innerHTML += content;
+    }
+
+  </script>
+  </div>
 </body>
 </html>

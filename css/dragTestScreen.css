@@ -6,6 +6,14 @@
     top: 0;*/
 }
 
+#drag2 {
+    position: absolute;
+    padding: 10px;
+    border: 2px solid #aaaaaa;
+    /*left: 0;
+    top: 0;*/
+}
+
 #div1 {
     width: 1300px;
     height: 1300px;
@@ -13,7 +21,7 @@
     border: 2px solid #aaaaaa;
 }
 
-#div2 {
+#resizeAuto {
     text-align: end;
     width: 450px;
     height: 500px;

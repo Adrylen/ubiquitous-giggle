@@ -34,7 +34,6 @@ function drop(event) {
 
 function drop_outside(event) {
     if (inAutoDisplay == 0) {
-        console.log('ok');
         var offset = event.dataTransfer.getData("text").split(',');
         var dm = document.getElementById(offset[2]);
         if (dm.className === "intoAuto") {
