@@ -57,10 +57,8 @@ canvas {
 #red{
   background-color: red ;
   border-radius:50%;
-				width:2%;
-				height:2%;
-				border:none;
-				outline:none;
+	width:2%;
+	height:2%;
 }
 
 
