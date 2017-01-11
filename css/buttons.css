@@ -4,11 +4,11 @@ body {
 }
 
 .button {
-    width: 10%;
+    width:44px;
     height: auto;
 }
 
 img {
-    width: 95%;
-    height: 95%;
+    width: 50%;
+    height: 50%;
 }

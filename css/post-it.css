@@ -12,3 +12,19 @@ textarea{
 #page{
 	border: solid black 1px;
 }
+
+.postIt
+{
+	position: absolute;
+	border: solid #ffb000 1%;
+	background-color: #f0e000;
+	resize: both;
+	overflow: auto;
+	padding: 2px;
+}
+
+.buttonApp
+{
+	width: 44px ;
+	height: 30px;
+}

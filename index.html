@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/post-it.css" />
     <script type="text/javascript" src="js/buttons.js"></script>
     <script type="text/javascript" src="js/dragTest.js"></script>
+    <script type="text/javascript" src="js/postIt.js"></script>
 
 </head>
 
@@ -27,7 +28,15 @@
                 <button class="button" title="move" onclick="Move()"><img src="image/buttons/move.png"/></button>
             </form>
         </div>
+        <div id="navigation">
+          <!--<div class="boutons">
+              <form>
+                  <button class="button" title="trash" onclick="Trash()"><img src="image/buttons/trash.png"/></button>
+              </form>
+          </div>-->
         <img src="image/feuillet.png" id="postItGenerate" onclick="createNew()" />
+        </div>
+
         <!--<div id="drag1" draggable="true" ondragstart="drag(event)">
             <input type="text" id="text1">
         </div>-->
