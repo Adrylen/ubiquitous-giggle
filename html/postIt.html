@@ -4,20 +4,18 @@
   <meta charset="utf-8">
   <title>Titre de la page</title>
   <link rel="stylesheet" href="../css/post-it.css">
+  <style>
+    canvas { border: solid black 1px; }
+  </style>
   <script type="text/javascript" src="../js/dragTest.js"></script>
 
 
 </head>
 <body>
   <div id="page" ondrop="drop_outside(event)" ondragover="allowDrop(event)">
-    <div id="navigation">
-      <div class="boutons">
-          <form>
-              <button class="button" title="trash" onclick="Trash()"><img src="image/buttons/trash.png"/></button>
-          </form>
-      </div>
-      <img src="../image/postit.jpg" onclick="createNew()"/>
-    </div>
+
+    <img src="../image/postit.jpg" onclick="createNew()"/>
+
   </div>
 </body>
 </html>

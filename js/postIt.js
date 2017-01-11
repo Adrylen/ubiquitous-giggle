@@ -114,3 +114,25 @@ function createNew() {
 
     document.getElementById('page').appendChild(postIt);
 }
+
+function replace(id){
+  var parent = document.getElementById(id);
+  var text = document.getElementById(id).getElementsByTagName("textarea")[0];;
+  var canvas = document.getElementById(id).getElementsByTagName("canvas")[0]; ;
+
+  if(text === undefined) {
+    canvas.remove();
+    text = document.createElement("textarea");
+    text.setAttribute('type','text');
+    parent.appendChild(text);
+  }
+  else {
+    text.remove();
+    canvas = document.createElement("canvas");
+    parent.appendChild(canvas);
+  }
+}
+
+function remove(id){
+  document.getElementById(id).remove();
+}

@@ -4,7 +4,7 @@
 		<title>Rotation</title>
 		<link rel="stylesheet" href="../css/rotation.css" type="text/css" />
 	</head>
-	<body>
+	<body id="page">
 		<div class="rotated-square" id="div">
 			<div id="image">
 				<img id="rotation" src="../image/circle.jpg" width="20" height="20" />
@@ -12,7 +12,9 @@
 			<p>Bonjour</p>
 			<textarea></textarea>
 		</div>
-		<button id="button">Click !</button>
+		<button onclick="fixed_rotation('page',-90)">-90</button>
+		<button onclick="fixed_rotation('page',180)">180</button>
+		<button onclick="fixed_rotation('page',+90)">+90</button>
 		<script type="text/javascript" src="../js/rotation.js"></script>
 	</body>
 </html>

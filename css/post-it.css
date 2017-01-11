@@ -9,6 +9,13 @@ textarea{
 }
 
 
+
+canvas{
+	width: 95%;
+	height: 95%;
+	resize:both;
+}
+
 #page{
 	border: solid black 1px;
 }
