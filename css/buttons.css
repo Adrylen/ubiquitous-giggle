@@ -1,0 +1,14 @@
+body {
+    background-image: url("../image/nebula.jpg");
+    background-size: 100%;
+}
+
+.button {
+    width: 10%;
+    height: auto;
+}
+
+img {
+    width: 95%;
+    height: 95%;
+}

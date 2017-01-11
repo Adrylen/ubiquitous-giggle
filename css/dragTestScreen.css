@@ -1,6 +1,14 @@
 #drag1 {
     position: absolute;
     padding: 10px;
+    border: 1px solid #aaaaaa;
+    resize: both;
+    overflow: auto;
+}
+
+#drag2 {
+    position: absolute;
+    padding: 10px;
     border: 2px solid #aaaaaa;
     /*left: 0;
     top: 0;*/
@@ -13,7 +21,7 @@
     border: 2px solid #aaaaaa;
 }
 
-#div2 {
+#resizeAuto {
     text-align: end;
     width: 450px;
     height: 500px;

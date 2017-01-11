@@ -1,0 +1,14 @@
+textarea{
+	border:none;
+	display: inline-block;
+	background-color: #F0E000;
+	margin-left:0.5px;
+	margin-right: 0.5px;
+	margin-bottom:0.5px;
+	margin-top:0.5px;
+}
+
+
+#page{
+	border: solid black 1px;
+}
