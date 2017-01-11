@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <title>Titre de la page</title>
   <link rel="stylesheet" href="../css/post-it.css">
+  <style>
+    canvas { border: solid black 1px; }
+  </style>
   <script type="text/javascript" src="../js/dragTest.js"></script>
 
 </head>
@@ -16,8 +19,30 @@
     var number=0;
     function createNew() {
       number = number + 1;
-      content= "<div id=\"postIt"+number+"\" draggable=\"true\" ondragstart=\"drag(event)\" style=\"position:absolute; display:inline-block; border:solid #FFB000 1%; background-color:#F0E000;padding:10px;  \"> <textarea type=\"text\"  > </textarea> </div>";
+      content= "<div id=\"postIt"+number+"\" draggable=\"true\" ondragstart=\"drag(event)\" style=\" position:absolute; display:inline-block; border:solid #FFB000 1%; background-color:#F0E000;padding:10px;  \"> <button onclick=\"remove('postIt"+number+"')\">Delete <button onclick=\"replace('postIt"+number+"')\">change</button> <textarea type=\"text\"  > </textarea> </div>";
       document.getElementById('page').innerHTML += content;
+    }
+
+    function replace(id){
+      var parent = document.getElementById(id);
+      var text = document.getElementById(id).getElementsByTagName("textarea")[0];;
+      var canvas = document.getElementById(id).getElementsByTagName("canvas")[0]; ;
+
+      if(text === undefined) {
+        canvas.remove();
+        text = document.createElement("textarea");
+        text.setAttribute('type','text');
+        parent.appendChild(text);
+      }
+      else {
+        text.remove();
+        canvas = document.createElement("canvas");
+        parent.appendChild(canvas);
+      }
+    }
+
+    function remove(id){
+      document.getElementById(id).remove();
     }
 
   </script>
