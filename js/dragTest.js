@@ -2,6 +2,14 @@ var initIntoPostitWidth;
 var initIntoPostitHeight;
 var inAutoDisplay = 0;
 
+var number = 0;
+
+function createNew() {
+    number = number + 1;
+    content = "<div id=\"postIt" + number + "\" draggable=\"true\" ondragstart=\"drag(event)\" style=\"position:absolute; border:solid #FFB000 1%; background-color:#F0E000; resize:both;overflow:auto;padding:2px;  \"> <textarea type=\"text\" style=\" resize:none; width:95%; height:95%  \"  > </textarea> </div>";
+    document.getElementById('page').innerHTML += content;
+}
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -21,14 +29,12 @@ function drop(event) {
     if (dm.className != "intoAuto") {
         initIntoPostitWidth = dm.offsetWidth;
         initIntoPostitHeight = dm.offsetHeight;
-        console.log(initIntoPostitHeight);
         event.target.appendChild(document.getElementById(offset[2]));
-        dm.style.width = "100%";
         dm.style.height = "100%";
+        dm.style.width = "100%";
         dm.className = "intoAuto";
         dm.style.left = 0;
         dm.style.top = 0;
-
     }
 }
 
@@ -37,17 +43,15 @@ function drop_outside(event) {
         var offset = event.dataTransfer.getData("text").split(',');
         var dm = document.getElementById(offset[2]);
         if (dm.className === "intoAuto") {
-            dm.style.height = initIntoPostitHeight+"px";
-            dm.style.width = initIntoPostitWidth+"px";
-            dm.style.left = (event.clientX)+'px';
-            dm.style.top = (event.clientY)+'px';
-        }else{
-          dm.style.left = (event.clientX + parseInt(offset[0], 10))+'px';
-          dm.style.top = (event.clientY + parseInt(offset[1], 10))+'px';
+            // DEMANDER A ADRIEN POUR LE -5
+            dm.style.height = initIntoPostitHeight + "px";
+            dm.style.width = initIntoPostitWidth + "px";
+            dm.style.left = (event.clientX) + 'px';
+            dm.style.top = (event.clientY) + 'px';
+        } else {
+            dm.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
+            dm.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
         }
-        //dm.style.left = (event.clientX + parseInt(offset[0], 10))*100/document.getElementById("page").offsetWidth +'%';
-        //dm.style.top = (event.clientY + parseInt(offset[1], 10))*100/document.getElementById("page").offsetHeight +'%';
-
 
         if (dm.className != "notAuto" || dm.className === "") {
             dm.className = "notAuto";

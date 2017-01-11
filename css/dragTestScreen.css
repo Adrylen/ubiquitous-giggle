@@ -1,9 +1,9 @@
 #drag1 {
     position: absolute;
     padding: 10px;
-    border: 2px solid #aaaaaa;
-    /*left: 0;
-    top: 0;*/
+    border: 1px solid #aaaaaa;
+    resize: both;
+    overflow: auto;
 }
 
 #drag2 {
