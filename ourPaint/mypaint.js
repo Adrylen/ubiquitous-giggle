@@ -30,19 +30,33 @@ function createCanvas() {
 
     mycanva.addEventListener("mousedown", function(e) {
         painting = true;
+        var canva = $(mycanva);
+        console.log(canva);
 
+        //Création du context
+        context = canva[0].getContext('2d');
         // Coordonnées de la souris :
         cursorX = (e.pageX - this.offsetLeft);
         cursorY = (e.pageY - this.offsetTop);
     }, false);
 
     window.addEventListener("mouseup", function(e) {
+        var canva = $(mycanva);
+        console.log(canva);
+
+        //Création du context
+        context = canva[0].getContext('2d');
         painting = false;
         started = false;
     }, false);
 
     mycanva.addEventListener("mousemove", function(e) {
         // Si je suis en train de dessiner (click souris enfoncé) :
+        var canva = $(mycanva);
+        console.log(canva);
+
+        //Création du context
+        context = canva[0].getContext('2d');
         if (painting) {
             // Set Coordonnées de la souris :
             cursorX = (e.pageX - this.offsetLeft) - 10; // 10 = décalage du curseur
