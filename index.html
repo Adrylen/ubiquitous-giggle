@@ -5,9 +5,12 @@
 		<title>Espace de travail</title>
 		<link rel="stylesheet" href="css/buttons.css" />
 		<link rel="stylesheet" href="css/master.css" />
+		<link rel="stylesheet" href="css/post-it.css" />
 		<script type="text/javascript" src="js/buttons.js"></script>
 		<script type="text/javascript" src="js/dragTest.js"></script>
+
 	</head>
+
 	<body>
 		<div id="page" ondrop="drop_outside(event)" ondragover="allowDrop(event)">
 			<div class="boutons">
@@ -21,21 +24,15 @@
 					<button class="button" title="screen shot" onclick="ScreenShot()"><img src="image/buttons/screenShot.png"/></button>
 					<button class="button" title="close" onclick="Close()"><img src="image/buttons/close.png"/></button>
 					<button class="button" title="move" onclick="Move()"><img src="image/buttons/move.png"/></button>
-
 				</form>
 			</div>
+			<img src="image/feuillet.png" id="postItGenerate" onclick="createNew()" />
+			<!--
 			<div id="drag1" draggable="true" ondragstart="drag(event)">
-					<input type="text">
+				<input type="text" id="text1">
 			</div>
-			<div id="resizeAuto" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-			<div class="test">
-				<ul>
-					<li><a href="html/postIt.html">Post It</a></li>
-				</ul>
-			</div>
+			-->
+		<div id="resizeAuto" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 		</div>
-		<!--
-			<script type="text/javascript" src="js/rotation.js"></script>
-		-->
 	</body>
 </html>
