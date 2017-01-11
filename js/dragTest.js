@@ -2,13 +2,6 @@ var initIntoPostitWidth;
 var initIntoPostitHeight;
 var inAutoDisplay = 0;
 
-var number = 0;
-
-function createNew() {
-    number = number + 1;
-    content = "<div id=\"postIt" + number + "\" draggable=\"true\" ondragstart=\"drag(event)\" style=\"position:absolute; border:solid #FFB000 1%; background-color:#F0E000; resize:both;overflow:auto;padding:2px;  \"> <textarea type=\"text\" style=\" resize:none; width:95%; height:95%  \"  > </textarea> </div>";
-    document.getElementById('page').innerHTML += content;
-}
 
 function allowDrop(ev) {
     ev.preventDefault();
