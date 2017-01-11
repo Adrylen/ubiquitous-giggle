@@ -52,3 +52,87 @@ canvas {
     width: 26px;
     height: 26px
 }
+
+
+#red{
+  background-color: red ;
+  border-radius:50%;
+				width:2%;
+				height:2%;
+				border:none;
+				outline:none;
+}
+
+
+#blue{
+  background-color: blue;
+  border-radius:50%;
+				width:2%;
+				height:2%;
+				border:none;
+				outline:none;
+}
+#green{
+  background-color: green;
+  border-radius:50%;
+				width:2%;
+				height:2%;
+				border:none;
+				outline:none;
+}
+#yellow{
+  background-color: yellow;
+  border-radius:50%;
+				width:2%;
+				height:2%;
+				border:none;
+				outline:none;
+}
+#black{
+  background-color:black ;
+  border-radius:50%;
+				width:2%;
+				height:2%;
+				border:none;
+				outline:none;
+}
+#purple{
+  background-color:purple ;
+  border-radius:50%;
+				width:2%;
+				height:2%;
+				border:none;
+				outline:none;
+}
+#pink{
+  background-color: pink;
+  border-radius:50%;
+				width:2%;
+				height:2%;
+				border:none;
+				outline:none;
+}
+#orange{
+  background-color: orange;
+  border-radius:50%;
+				width:2%;
+				height:2%;
+				border:none;
+				outline:none;
+}
+#brown{
+  background-color: brown;
+  border-radius:50%;
+				width:2%;
+				height:2%;
+				border:none;
+				outline:none;
+}
+#white{
+  background-color: white;
+  border-radius:50%;
+				width:2%;
+				height:2%;
+				border:none;
+				outline:none;
+}

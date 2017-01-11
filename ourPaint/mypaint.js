@@ -100,3 +100,11 @@ $("#couleurs a").each(function() {
         return false;
     });
 });
+
+function changeColor(id) {
+  color = id;
+}
+function clean(){
+  color = "white"
+  width_brush = 10;
+}
