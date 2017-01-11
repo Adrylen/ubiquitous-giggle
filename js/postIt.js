@@ -30,7 +30,7 @@ function createNew() {
     let trash = document.createElement('button');
     trash.setAttribute('id','trash1');
     trash.classList.add('buttonApp');
-    trash.setAttribute('onclick','Trash()');
+    trash.setAttribute('onclick','Trash("postIt"+number+"")');
     navigation.appendChild(trash);
 
     //son icone
@@ -82,16 +82,16 @@ function createNew() {
     iSave.setAttribute('src','image/buttons/save.png');
     save.appendChild(iSave);
 
-    //bouton full close
-    let close = document.createElement('button');
-    close.setAttribute('class','buttonApp');
-    close.setAttribute('onclick','Close()');
-    navigation.appendChild(close);
+    //bouton full change
+    let change = document.createElement('button');
+    change.setAttribute('class','buttonApp');
+    change.setAttribute('onclick','replace("postIt"+number+"")');
+    navigation.appendChild(change);
 
     //son icone
-    let iClose = document.createElement('img');
-    iClose.setAttribute('src','image/buttons/close.png');
-    close.appendChild(iClose);
+    let ichange = document.createElement('img');
+    ichange.setAttribute('src','image/buttons/change.png');
+    change.appendChild(ichange);
 
     //bouton move
     let move = document.createElement('button');
@@ -108,8 +108,8 @@ function createNew() {
     text.setAttribute('type','text');
     postIt.appendChild(text);
     text.setAttribute('style.resize','none');
-    text.style.width=99+'%';
-    text.style.height=99+'%';
+    text.style.width=70+'%';
+    text.style.height=70+'%';
     text.style.bottom= 0 +'%';
 
     document.getElementById('page').appendChild(postIt);
@@ -129,10 +129,11 @@ function replace(id){
   else {
     text.remove();
     canvas = document.createElement("canvas");
+    canvas.
     parent.appendChild(canvas);
   }
 }
 
-function remove(id){
+function Trash(id){
   document.getElementById(id).remove();
 }
