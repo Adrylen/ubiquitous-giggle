@@ -8,6 +8,8 @@ textarea {
     /*margin-left: 10px;
     margin-bottom: 10%;
     margin-top: 10px;*/
+    margin-left: 44px;
+    float: right;
     border: transparent;
 }
 
@@ -41,6 +43,11 @@ canvas {
 }
 
 .buttonApp {
+    width: 44px;
+    height: 30px;
+}
+
+.buttonHide {
     width: 44px;
     height: 30px;
 }

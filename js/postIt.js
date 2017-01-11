@@ -26,6 +26,15 @@ function createNew() {
     postIt.appendChild(navigation);
     console.log(navigation.style.height);
 
+    //bouton Hide -> Cacher tous les autres
+    let hide = document.createElement('input');
+    hide.type = "button";
+    hide.value = "Hide";
+    hide.setAttribute('class', 'buttonHide');
+    hide.setAttribute('onclick', 'hide()');
+    navigation.appendChild(hide);
+
+
     //bouton poubelle
     let trash = document.createElement('button');
     trash.setAttribute('id', 'trash1');
@@ -38,6 +47,8 @@ function createNew() {
     iTrash.setAttribute('src', 'image/buttons/trash.png');
     trash.appendChild(iTrash);
 
+    trash.style.visibility = "hidden";
+
     //bouton resize
     let resize = document.createElement('button');
     resize.setAttribute('class', 'buttonApp');
@@ -48,6 +59,8 @@ function createNew() {
     let iResize = document.createElement('img');
     iResize.setAttribute('src', 'image/buttons/resize.png');
     resize.appendChild(iResize);
+
+    resize.style.visibility = "hidden";
 
     //bouton full screen
     let fullscreen = document.createElement('button');
@@ -60,6 +73,8 @@ function createNew() {
     iFullscreen.setAttribute('src', 'image/buttons/fullScreen.png');
     fullscreen.appendChild(iFullscreen);
 
+    fullscreen.style.visibility = "hidden";
+
     //bouton turn
     let turn = document.createElement('button');
     turn.setAttribute('class', 'buttonApp');
@@ -70,6 +85,8 @@ function createNew() {
     let iTurn = document.createElement('img');
     iTurn.setAttribute('src', 'image/buttons/turn.png');
     turn.appendChild(iTurn);
+
+    turn.style.visibility = "hidden";
 
     //bouton save
     let save = document.createElement('button');
@@ -82,6 +99,8 @@ function createNew() {
     iSave.setAttribute('src', 'image/buttons/save.png');
     save.appendChild(iSave);
 
+    save.style.visibility = "hidden";
+
     //bouton full change
     let change = document.createElement('button');
     change.setAttribute('class', 'buttonApp');
@@ -93,6 +112,8 @@ function createNew() {
     ichange.setAttribute('src', 'image/buttons/change.png');
     change.appendChild(ichange);
 
+    change.style.visibility = "hidden";
+
     //bouton move
     let move = document.createElement('button');
     move.setAttribute('class', 'buttonApp');
@@ -103,6 +124,8 @@ function createNew() {
     let iMove = document.createElement('img');
     iMove.setAttribute('src', 'image/buttons/move.png');
     move.appendChild(iMove);
+
+    move.style.visibility = "hidden";
 
     let text = document.createElement('textarea');
     text.setAttribute('type', 'text');
