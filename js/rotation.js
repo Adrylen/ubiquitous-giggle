@@ -1,17 +1,23 @@
 var rotated = false;
 
-document.getElementById('button').onclick = function() {
-    var div = document.getElementById('div'),
-        deg = rotated ? 0 : 66;
-
-    //div.style.webkitTransform = 'rotate('+deg+'deg)';
-    //div.style.mozTransform    = 'rotate('+deg+'deg)';
-    //div.style.msTransform     = 'rotate('+deg+'deg)';
-    //div.style.oTransform      = 'rotate('+deg+'deg)';
-    div.style.transform       = 'rotate('+deg+'deg)';
-
-    rotated = !rotated;
+function fixed_rotation(id, deg) {
+    let match_array = document.getElementById(id).style.transform.match(/-?[0-9]+/g);
+    deg += (match_array !== null) ? parseInt(match_array[0]) : 0;
+    document.getElementById(id).style.transform = "rotate("+deg+"deg)";
 }
+//
+// document.getElementById('button').onclick = function() {
+//     var div = document.getElementById('div'),
+//         deg = rotated ? 0 : 66;
+//
+//     //div.style.webkitTransform = 'rotate('+deg+'deg)';
+//     //div.style.mozTransform    = 'rotate('+deg+'deg)';
+//     //div.style.msTransform     = 'rotate('+deg+'deg)';
+//     //div.style.oTransform      = 'rotate('+deg+'deg)';
+//     div.style.transform       = 'rotate('+deg+'deg)';
+//
+//     rotated = !rotated;
+// }
 
 let x0,y0;
 let x1,y1;
