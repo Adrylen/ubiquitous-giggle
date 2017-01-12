@@ -2,7 +2,7 @@ textarea {
     position: absolute;
     resize: none;
     width: 80%;
-    height: 80%;
+    height: 70%;
     /*display: block;*/
     background-color: #F0E000;
     /*margin-left: 10px;
@@ -18,8 +18,8 @@ canvas{
 	margin-right: 1px;
 	margin-bottom:1px;
 	margin-top:1px;
-	width: 98%;
-	height: 86%;
+	width: 96%;
+	height: 80%;
 	resize:both;
 	border: 1px solid #999;
 	border-radius: 20px;
@@ -39,7 +39,7 @@ canvas{
 	background-color: #f0e000;
 	resize: both;
 	overflow: hidden;
-	padding: 2px;
+	padding: 9px;
 }
 
 .buttonApp {
@@ -50,77 +50,65 @@ canvas{
 #red{
   background-color: red ;
   border-radius:50%;
-	width:10%;
-	height:50%;
+	padding: 9px;
 	outline: none;
 }
-
 
 #blue{
   background-color: blue;
   border-radius:50%;
-	width:10%;
-	height:50%;
+	padding: 9px;
 	outline:none;
 }
 #green{
   background-color: green;
   border-radius:50%;
-	width:10%;
-	height:50%;
+	padding: 9px;
 	outline:none;
 }
 #yellow{
   background-color: yellow;
   border-radius:50%;
-	width:10%;
-	height:50%;
-
-		utline:none;
+	padding: 9px;
+	outline:none;
 }
 #black{
   background-color:black ;
   border-radius:50%;
-	width:10%;
-	height:50%;
+	padding: 9px;
 	outline:none;
 }
 #purple{
   background-color:purple ;
   border-radius:50%;
-	width:10%;
-	height:50%;
+	padding: 9px;
 	outline:none;
 }
 #pink{
   background-color: pink;
   border-radius:50%;
-	width:10%;
-	height:50%;
+  padding: 9px;
 	outline:none;
 }
 #orange{
   background-color: orange;
   border-radius:50%;
-	width:10%;
-	height:50%;
+	padding: 9px;
 	outline:none;
 }
 #brown{
   background-color: brown;
   border-radius:50%;
-	width:10%;
-	height:50%;
+	padding: 9px;
 	outline:none;
 }
 #white{
   background-color: white;
   border-radius:50%;
-	width:10%;
-	height:50%;
+	padding: 9px;
 	outline:none;
 }
-	
+
 .buttonHide {
     width: 44px;
     height: 30px;

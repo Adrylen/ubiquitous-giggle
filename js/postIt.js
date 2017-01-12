@@ -3,6 +3,7 @@ var number = 0;
 var color = "#000000";
 var painting = false;
 var started = false;
+var size_min = 5;
 var width_brush = 5;
 var cursorX, cursorY;
 var restoreCanvasArray = [];
@@ -130,14 +131,16 @@ function createNew() {
     text.style.width = 70 + '%';
     text.style.height = 70 + '%';
     text.style.bottom = 0 + '%';
-    
+
     // bouton bleu
     let color = document.createElement('div');
+    color.classList.add('color');
     let blue = document.createElement('button');
     blue.setAttribute('id','blue');
     blue.setAttribute('onclick','changeColor("blue")');
     navigation.appendChild(blue);
     color.appendChild(blue);
+
     //bouton rouge
     let red = document.createElement('button');
     red.setAttribute('id','red');
@@ -152,7 +155,7 @@ function createNew() {
     navigation.appendChild(black);
     color.appendChild(black);
 
-    //bouton yellow
+    //bouton jaune
     let yellow = document.createElement('button');
     yellow.setAttribute('id','yellow');
     yellow.setAttribute('onclick','changeColor("yellow")');
@@ -194,22 +197,27 @@ function createNew() {
     navigation.appendChild(white);
     color.appendChild(white);
 
+    color.style.visibility = 'hidden';
+    postIt.appendChild(color);
+
     document.getElementById('page').appendChild(postIt);
 }
 
 function replace(id) {
     var parent = document.getElementById(id);
-    //var bouton = document.getElementsByClassName(button);
-    var text = document.getElementById(id).getElementsByTagName("textarea")[0];
-    var canvas = document.getElementById(id).getElementsByTagName("canvas")[0];
+    var color = parent.getElementsByClassName('color')[0];
+    var text = parent.getElementsByTagName("textarea")[0];
+    var canvas = parent.getElementsByTagName("canvas")[0];
 
     if (text === undefined) {
+      color.style.visibility = "hidden";
         canvas.remove();
         //  bouton.hide();
         text = document.createElement("textarea");
         text.setAttribute('type', 'text');
         parent.appendChild(text);
     } else {
+        color.style.visibility = 'visible';
         text.remove();
         canvas = document.createElement("canvas");
         var div = document.createElement("div");
