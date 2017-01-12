@@ -3,8 +3,8 @@ var initIntoPostitHeight;
 var inAutoDisplay = 0;
 
 
-function allowDrop(ev) {
-    ev.preventDefault();
+function allowDrop(event) {
+    event.preventDefault();
 }
 
 function drag(event) {
@@ -37,12 +37,11 @@ function drop_outside(event) {
     if (inAutoDisplay == 0) {
         var offset = event.dataTransfer.getData("text").split(',');
         var dm = document.getElementById(offset[2]);
-        console.log("OK", initIntoPostitWidth);
         if (dm.classList[1] === "intoAuto") {
-			console.log("IN", initIntoPostitWidth);
+            console.log("IN", initIntoPostitWidth);
             // DEMANDER A ADRIEN POUR LE -5
-            dm.style.height = initIntoPostitHeight-6 + "px";
-            dm.style.width = initIntoPostitWidth-6 + "px";
+            dm.style.height = initIntoPostitHeight - 6 + "px";
+            dm.style.width = initIntoPostitWidth - 6 + "px";
             dm.style.left = (event.clientX) + 'px';
             dm.style.top = (event.clientY) + 'px';
         } else {
