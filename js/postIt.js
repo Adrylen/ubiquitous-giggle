@@ -21,7 +21,7 @@ function createNew() {
     //div principale
     let postIt = document.createElement('div');
     postIt.setAttribute('id', 'postIt' + number);
-    postIt.setAttribute('draggable', true);
+    //postIt.setAttribute('draggable', true);
     postIt.setAttribute('ondragstart', 'drag(event)');
     postIt.classList.add('postIt');
     postIt.style.width = sizeW + 'px';
@@ -57,6 +57,8 @@ function createNew() {
     iTrash.setAttribute('src', 'image/buttons/trash.png');
     trash.appendChild(iTrash);
 
+    trash.style.visibility = "hidden";
+
     //bouton resize
     let resize = document.createElement('button');
     resize.setAttribute('class', 'buttonApp');
@@ -68,6 +70,8 @@ function createNew() {
     iResize.setAttribute('src', 'image/buttons/resize.png');
     resize.appendChild(iResize);
 
+    resize.style.visibility = "hidden";
+
     //bouton full screen
     let fullscreen = document.createElement('button');
     fullscreen.setAttribute('class', 'buttonApp');
@@ -78,6 +82,8 @@ function createNew() {
     let iFullscreen = document.createElement('img');
     iFullscreen.setAttribute('src', 'image/buttons/fullScreen.png');
     fullscreen.appendChild(iFullscreen);
+
+    fullscreen.style.visibility = "hidden";
 
     //bouton turn
     let turn = document.createElement('button');
@@ -91,6 +97,8 @@ function createNew() {
     iTurn.setAttribute('src', 'image/buttons/turn.png');
     turn.appendChild(iTurn);
 
+    turn.style.visibility = "hidden";
+
     //bouton save
     let save = document.createElement('button');
     save.setAttribute('class', 'buttonApp');
@@ -101,6 +109,8 @@ function createNew() {
     let iSave = document.createElement('img');
     iSave.setAttribute('src', 'image/buttons/save.png');
     save.appendChild(iSave);
+
+    save.style.visibility = "hidden";
 
     //bouton full change
     let change = document.createElement('button');
@@ -113,16 +123,20 @@ function createNew() {
     ichange.setAttribute('src', 'image/buttons/change.png');
     change.appendChild(ichange);
 
+    change.style.visibility = "hidden";
+
     //bouton move
     let move = document.createElement('button');
     move.setAttribute('class', 'buttonApp');
-    move.setAttribute('onclick', 'Move()');
+    move.setAttribute('onclick', 'Move("postIt' + number + '")');
     navigation.appendChild(move);
 
     //son icone
     let iMove = document.createElement('img');
     iMove.setAttribute('src', 'image/buttons/move.png');
     move.appendChild(iMove);
+
+    move.style.visibility = "hidden";
 
     let text = document.createElement('textarea');
     text.setAttribute('type', 'text');
@@ -136,64 +150,64 @@ function createNew() {
     let color = document.createElement('div');
     color.classList.add('color');
     let blue = document.createElement('button');
-    blue.setAttribute('id','blue');
-    blue.setAttribute('onclick','changeColor("blue")');
+    blue.setAttribute('id', 'blue');
+    blue.setAttribute('onclick', 'changeColor("blue")');
     navigation.appendChild(blue);
     color.appendChild(blue);
 
     //bouton rouge
     let red = document.createElement('button');
-    red.setAttribute('id','red');
-    red.setAttribute('onclick','changeColor("red")');
+    red.setAttribute('id', 'red');
+    red.setAttribute('onclick', 'changeColor("red")');
     navigation.appendChild(red);
     color.appendChild(red);
 
     //bouton noir
-      let black = document.createElement('button');
-    black.setAttribute('id','black');
-    black.setAttribute('onclick','changeColor("black")');
+    let black = document.createElement('button');
+    black.setAttribute('id', 'black');
+    black.setAttribute('onclick', 'changeColor("black")');
     navigation.appendChild(black);
     color.appendChild(black);
 
     //bouton jaune
     let yellow = document.createElement('button');
-    yellow.setAttribute('id','yellow');
-    yellow.setAttribute('onclick','changeColor("yellow")');
+    yellow.setAttribute('id', 'yellow');
+    yellow.setAttribute('onclick', 'changeColor("yellow")');
     navigation.appendChild(yellow);
     color.appendChild(yellow);
 
     //bouton purple
     let purple = document.createElement('button');
-    purple.setAttribute('id','purple');
-    purple.setAttribute('onclick','changeColor("purple")');
+    purple.setAttribute('id', 'purple');
+    purple.setAttribute('onclick', 'changeColor("purple")');
     navigation.appendChild(purple);
     color.appendChild(purple);
 
     //bouton rose
     let pink = document.createElement('button');
-    pink.setAttribute('id','pink');
-    pink.setAttribute('onclick','changeColor("pink")');
+    pink.setAttribute('id', 'pink');
+    pink.setAttribute('onclick', 'changeColor("pink")');
     navigation.appendChild(pink);
     color.appendChild(pink);
 
     //bouton marron
     let brown = document.createElement('button');
-    brown.setAttribute('id','brown');
-    brown.setAttribute('onclick','changeColor("brown")');
+    brown.setAttribute('id', 'brown');
+    brown.setAttribute('onclick', 'changeColor("brown")');
     navigation.appendChild(brown);
     color.appendChild(brown);
 
     // bouton green
     let green = document.createElement('button');
-    green.setAttribute('id','green');
-    green.setAttribute('onclick','changeColor("green")');
+    green.setAttribute('id', 'green');
+    green.setAttribute('onclick', 'changeColor("green")');
     navigation.appendChild(green);
     color.appendChild(green);
 
     // bouton blanc
     let white = document.createElement('button');
-    white.setAttribute('id','white');
-    white.setAttribute('onclick','changeColor("white")');
+    white.setAttribute('id', 'white');
+    white.setAttribute('onclick', 'changeColor("white")');
     navigation.appendChild(white);
     color.appendChild(white);
 
