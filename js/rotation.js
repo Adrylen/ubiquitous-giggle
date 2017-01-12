@@ -41,7 +41,8 @@ let block;
 function startRotation(e) {
 	if(!rotate) {
 		//let block = document.getElementById("div");
-		block = (e.target.tagName === "IMG") ? e.target.parentNode.parentNode.parentNode : e.target.parentNode.parentNode;
+		//block = (e.target.tagName === "IMG") ? e.target.parentNode.parentNode.parentNode : e.target.parentNode.parentNode;
+		block = e.target.parentNode.parentNode;
 		x0 = e.pageX; y0 = e.pageY;
 		x1 = block.offsetLeft + block.offsetWidth / 2;
 		y1 = block.offsetTop + block.offsetHeight / 2;

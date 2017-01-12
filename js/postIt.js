@@ -46,95 +46,73 @@ function createNew() {
     navigation.appendChild(hide);
 
     //bouton poubelle
-    let trash = document.createElement('button');
+    let trash = document.createElement('img');
     trash.setAttribute('id', 'trash1');
     trash.classList.add('buttonApp');
     trash.setAttribute('onclick', 'Trash("postIt' + number + '")');
+    trash.setAttribute('src', 'image/buttons/trashH.png');
     navigation.appendChild(trash);
 
-    //son icone
-    let iTrash = document.createElement('img');
-    iTrash.setAttribute('src', 'image/buttons/trash.png');
-    trash.appendChild(iTrash);
 
     trash.style.visibility = "hidden";
 
     //bouton resize
-    let resize = document.createElement('button');
+    let resize = document.createElement('img');
     resize.setAttribute('class', 'buttonApp');
     resize.setAttribute('onclick', 'Resize()');
+    resize.setAttribute('src', 'image/buttons/resizeH.png');
     navigation.appendChild(resize);
 
-    //son icone
-    let iResize = document.createElement('img');
-    iResize.setAttribute('src', 'image/buttons/resize.png');
-    resize.appendChild(iResize);
 
     resize.style.visibility = "hidden";
 
     //bouton full screen
-    let fullscreen = document.createElement('button');
+    let fullscreen = document.createElement('img');
     fullscreen.setAttribute('class', 'buttonApp');
     fullscreen.setAttribute('onclick', 'fullscreen('+postIt.id+')');
+    fullscreen.setAttribute('src', 'image/buttons/fullScreenH.png');
     navigation.appendChild(fullscreen);
 
-    //son icone
-    let iFullscreen = document.createElement('img');
-    iFullscreen.setAttribute('src', 'image/buttons/fullScreen.png');
-    fullscreen.appendChild(iFullscreen);
 
     fullscreen.style.visibility = "hidden";
 
     //bouton turn
-    let turn = document.createElement('button');
+    let turn = document.createElement('img');
     turn.setAttribute('class', 'buttonApp');
     //turn.setAttribute('onclick','Turn()');
     turn.addEventListener('click', startRotation);
+    turn.setAttribute('src', 'image/buttons/turnH.png');
     navigation.appendChild(turn);
-
-    //son icone
-    let iTurn = document.createElement('img');
-    iTurn.setAttribute('src', 'image/buttons/turn.png');
-    turn.appendChild(iTurn);
 
     turn.style.visibility = "hidden";
 
     //bouton save
-    let save = document.createElement('button');
+    let save = document.createElement('img');
     save.setAttribute('class', 'buttonApp');
     save.setAttribute('onclick', 'Save()');
+    save.setAttribute('src', 'image/buttons/saveH.png');
     navigation.appendChild(save);
 
-    //son icone
-    let iSave = document.createElement('img');
-    iSave.setAttribute('src', 'image/buttons/save.png');
-    save.appendChild(iSave);
 
     save.style.visibility = "hidden";
 
     //bouton full change
-    let change = document.createElement('button');
+    let change = document.createElement('img');
     change.setAttribute('class', 'buttonApp');
     change.setAttribute('onclick', 'replace("postIt"+number+"")');
+    change.setAttribute('src', 'image/buttons/styloH.png');
     navigation.appendChild(change);
 
-    //son icone
-    let ichange = document.createElement('img');
-    ichange.setAttribute('src', 'image/buttons/change.png');
-    change.appendChild(ichange);
 
     change.style.visibility = "hidden";
 
     //bouton move
-    let move = document.createElement('button');
+    let move = document.createElement('img');
     move.setAttribute('class', 'buttonApp');
     move.setAttribute('onclick', 'Move("postIt' + number + '")');
+    move.setAttribute('src', 'image/buttons/moveH.png');
     navigation.appendChild(move);
 
-    //son icone
-    let iMove = document.createElement('img');
-    iMove.setAttribute('src', 'image/buttons/move.png');
-    move.appendChild(iMove);
 
     move.style.visibility = "hidden";
 
