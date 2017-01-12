@@ -4,19 +4,12 @@ var color = "#000000";
 var painting = false;
 var started = false;
 var size_min = 5;
-var width_brush = 5;
-var cursorX, cursorY;
-var restoreCanvasArray = [];
-var restoreCanvasIndex = 0;
-var context;
-var nbCanvas = 0;
 
 function createNew() {
     number = number + 1;
 
     var sizeW = document.getElementById('postItGenerate').offsetWidth;
     var sizeH = document.getElementById('postItGenerate').offsetHeight;
-    console.log(sizeH)
 
     //div principale
     let postIt = document.createElement('div');
@@ -26,7 +19,6 @@ function createNew() {
     postIt.classList.add('postIt');
     postIt.style.width = sizeW + 'px';
     postIt.style.height = sizeH + 'px';
-    console.log(postIt.style.height);
 
     //div des boutons
     let navigation = document.createElement('div');
@@ -35,7 +27,6 @@ function createNew() {
     navigation.style.height = 30 + 'px';
     navigation.backgroundColor = '#F0E000';
     postIt.appendChild(navigation);
-    console.log(navigation.style.height);
 
     //bouton Hide -> Cacher tous les autres
     let hide = document.createElement('input');
@@ -59,18 +50,6 @@ function createNew() {
 
     trash.style.visibility = "hidden";
 
-    //bouton resize
-    let resize = document.createElement('button');
-    resize.setAttribute('class', 'buttonApp');
-    resize.setAttribute('onclick', 'Resize()');
-    navigation.appendChild(resize);
-
-    //son icone
-    let iResize = document.createElement('img');
-    iResize.setAttribute('src', 'image/buttons/resize.png');
-    resize.appendChild(iResize);
-
-    resize.style.visibility = "hidden";
 
     //bouton full screen
     let fullscreen = document.createElement('button');
@@ -226,19 +205,17 @@ function replace(id) {
     if (text === undefined) {
       color.style.visibility = "hidden";
         canvas.remove();
-        //  bouton.hide();
         text = document.createElement("textarea");
         text.setAttribute('type', 'text');
         parent.appendChild(text);
     } else {
         color.style.visibility = 'visible';
         text.remove();
-        canvas = document.createElement("canvas");
-        var div = document.createElement("div");
-        canvas.appendChild(div);
-        canvas.setAttribute("id", "postIt'+number+'");
-        canvas.setAttribute("onclick", "createCanvas()");
-        parent.appendChild(canvas);
+        parent.style.width = 302+'px';
+        parent.style.height = 360+'px';
+        createCanvas(parent,number);
+  /*      console.log(parent.offsetTop);  // X
+        console.log(parent.offsetLeft); // Y*/
     }
 }
 
