@@ -180,27 +180,15 @@ function createNew() {
     document.getElementById('page').appendChild(postIt);
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 function replace(id){
   var parent = document.getElementById(id);
-  var text = document.getElementById(id).getElementsByTagName("textarea")[0];;
-  var canvas = document.getElementById(id).getElementsByTagName("canvas")[0]; ;
-
-  if(text === undefined) {
-    canvas.remove();
-=======
-
-function replace(id){
-  var parent = document.getElementById(id);
-  var bouton = document.getElementsByClassName(button);
+  //var bouton = document.getElementsByClassName(button);
   var text = document.getElementById(id).getElementsByTagName("textarea")[0];
   var canvas = document.getElementById(id).getElementsByTagName("canvas")[0];
 
   if(text === undefined) {
     canvas.remove();
   //  bouton.hide();
->>>>>>> 8c73337d2e67cb9d21a734ebb51f6731e2d46836
     text = document.createElement("textarea");
     text.setAttribute('type','text');
     parent.appendChild(text);
@@ -208,32 +196,6 @@ function replace(id){
   else {
     text.remove();
     canvas = document.createElement("canvas");
-<<<<<<< HEAD
-    parent.appendChild(canvas);
-  }
-=======
-function replace(id) {
-    var parent = document.getElementById(id);
-    var text = document.getElementById(id).getElementsByTagName("textarea")[0];;
-    var canvas = document.getElementById(id).getElementsByTagName("canvas")[0];;
-
-    if (text === undefined) {
-        canvas.remove();
-        text = document.createElement("textarea");
-        text.setAttribute('type', 'text');
-        parent.appendChild(text);
-    } else {
-        text.remove();
-        canvas = document.createElement("canvas");
-        canvas.
-        parent.appendChild(canvas);
-    }
->>>>>>> 2c15d209d3f4f0925f39905c3420ed9799b65846
-}
-
-function Trash(id) {
-    document.getElementById(id).remove();
-=======
     var div = document.createElement("div");
     canvas.appendChild(div);
     canvas.setAttribute("id","postIt'+number+'");
@@ -242,7 +204,6 @@ function Trash(id) {
   }
 }
 
-function Trash(id){
-  document.getElementById(id).remove();
->>>>>>> 8c73337d2e67cb9d21a734ebb51f6731e2d46836
+function Trash(id) {
+    document.getElementById(id).remove();
 }
