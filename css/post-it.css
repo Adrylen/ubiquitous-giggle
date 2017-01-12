@@ -44,8 +44,10 @@ canvas {
 }
 
 .buttonApp {
-    width: 44px;
-    height: 30px;
+    width: 14%;
+    height: auto;
+    max-height: auto;
+    max-width: 30px;
 }
 
 #red {
@@ -119,6 +121,8 @@ canvas {
 }
 
 .buttonHide {
-    width: 44px;
-    height: 30px;
+    width: 14%;
+    height: auto;
+    max-height: auto;
+    max-width: 30px;
 }

@@ -11,12 +11,16 @@ var restoreCanvasIndex = 0;
 var context;
 var nbCanvas = 0;
 
+
 function createNew() {
     number = number + 1;
 
     var sizeW = document.getElementById('postItGenerate').offsetWidth;
     var sizeH = document.getElementById('postItGenerate').offsetHeight;
+
     console.log(sizeH)
+
+
 
     //div principale
     let postIt = document.createElement('div');
@@ -38,17 +42,23 @@ function createNew() {
     console.log(navigation.style.height);
 
     //bouton Hide -> Cacher tous les autres
-    let hide = document.createElement('input');
+    let hide = document.createElement('img');
     hide.type = "button";
     hide.value = "Hide";
+    hide.addEventListener("mousedown", mouseDown);
+    hide.addEventListener("mouseup", mouseUp);
     hide.setAttribute('class', 'buttonHide');
     hide.setAttribute('onclick', 'hide()');
+    hide.setAttribute('src', 'image/buttons/hideH.png');
+
     navigation.appendChild(hide);
 
     //bouton poubelle
     let trash = document.createElement('img');
-    trash.setAttribute('id', 'trash1');
-    trash.classList.add('buttonApp');
+    trash.type = "button";
+    trash.addEventListener("mousedown", mouseDown);
+    trash.addEventListener("mouseup", mouseUp);
+    trash.setAttribute('class','buttonApp');
     trash.setAttribute('onclick', 'Trash("postIt' + number + '")');
     trash.setAttribute('src', 'image/buttons/trashH.png');
     navigation.appendChild(trash);
@@ -56,18 +66,12 @@ function createNew() {
 
     trash.style.visibility = "hidden";
 
-    //bouton resize
-    let resize = document.createElement('img');
-    resize.setAttribute('class', 'buttonApp');
-    resize.setAttribute('onclick', 'Resize()');
-    resize.setAttribute('src', 'image/buttons/resizeH.png');
-    navigation.appendChild(resize);
-
-
-    resize.style.visibility = "hidden";
 
     //bouton full screen
     let fullscreen = document.createElement('img');
+    fullscreen.addEventListener("mousedown", mouseDown);
+    fullscreen.addEventListener("mouseup", mouseUp);
+    fullscreen.type = "button";
     fullscreen.setAttribute('class', 'buttonApp');
     fullscreen.setAttribute('onclick', 'fullscreen(' + postIt.id + ')');
     fullscreen.setAttribute('src', 'image/buttons/fullScreenH.png');
@@ -78,6 +82,9 @@ function createNew() {
 
     //bouton turn
     let turn = document.createElement('img');
+    turn.addEventListener("mousedown", mouseDownS);
+    turn.addEventListener("mouseup", mouseUpS);
+    turn.type = "button";
     turn.setAttribute('class', 'buttonApp');
     //turn.setAttribute('onclick','Turn()');
     turn.addEventListener('click', startRotation);
@@ -88,6 +95,9 @@ function createNew() {
 
     //bouton save
     let save = document.createElement('img');
+    save.addEventListener("mousedown", mouseDown);
+    save.addEventListener("mouseup", mouseUp);
+    save.type = "button";
     save.setAttribute('class', 'buttonApp');
     // save.setAttribute('onclick', 'Save()');
     save.setAttribute('src', 'image/buttons/saveH.png');
@@ -99,6 +109,9 @@ function createNew() {
 
     //bouton full change
     let change = document.createElement('img');
+    change.addEventListener("mousedown", mouseDown);
+    change.addEventListener("mouseup", mouseUp);
+    change.type = "button";
     change.setAttribute('class', 'buttonApp');
     change.setAttribute('onclick', 'replace("postIt"+number+"")');
     change.setAttribute('src', 'image/buttons/styloH.png');
@@ -109,9 +122,12 @@ function createNew() {
 
     //bouton move
     let move = document.createElement('img');
+    move.addEventListener("mousedown", mouseDownS);
+    move.addEventListener("mouseup", mouseUpS);
+    move.type = "button";
     move.setAttribute('class', 'buttonApp');
     move.setAttribute('onclick', 'Move("postIt' + number + '")');
-    move.setAttribute('src', 'image/buttons/moveH.png');
+    move.setAttribute('src', 'image/buttons/moveOKH.png');
     navigation.appendChild(move);
 
 
@@ -199,6 +215,7 @@ function createNew() {
     postIt.appendChild(color);
 
     document.getElementById('page').appendChild(postIt);
+
 }
 
 function replace(id) {
@@ -228,4 +245,25 @@ function replace(id) {
 
 function Trash(id) {
     document.getElementById(id).remove();
+}
+
+function mouseDown(event){
+  this.src='image/buttons/'+event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g)+'B.png';
+}
+
+function mouseUp(event){
+  this.src='image/buttons/'+event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g)+'H.png';
+}
+
+function mouseDownS(event) {
+  if(event.target.getAttribute('src').match(/OK/g) !== null)
+    this.src='image/buttons/'+event.target.getAttribute('src').match(/[a-zA-Z]+(?=OK[HB]\.png)/g)+'OKB.png';
+  else
+    this.src='image/buttons/'+event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g)+'B.png';
+}
+function mouseUpS(event) {
+  if(event.target.getAttribute('src').match(/OK/g) !== null)
+    this.src='image/buttons/'+event.target.getAttribute('src').match(/[a-zA-Z]+(?=OK[HB]\.png)/g)+'H.png';
+  else
+    this.src='image/buttons/'+event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g)+'OKH.png';
 }
