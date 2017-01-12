@@ -182,7 +182,7 @@ function createNew() {
 
 function replace(id){
   var parent = document.getElementById(id);
-//  var bouton = document.getElementsByClassName(button);
+  var bouton = document.getElementsByClassName(button);
   var text = document.getElementById(id).getElementsByTagName("textarea")[0];
   var canvas = document.getElementById(id).getElementsByTagName("canvas")[0];
 

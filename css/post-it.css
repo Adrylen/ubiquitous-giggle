@@ -1,16 +1,17 @@
-textarea{
-	position:center;
-	resize:both;
-	width: 98%;
-	height: 86%;
-	display: block;
-	background-color: #F0E000;
-	margin-left:1px;
-	margin-right: 1px;
-	margin-bottom:1px;
-	margin-top:1px;
+textarea {
+    position: absolute;
+    resize: none;
+    width: 80%;
+    height: 80%;
+    /*display: block;*/
+    background-color: #F0E000;
+    /*margin-left: 10px;
+    margin-bottom: 10%;
+    margin-top: 10px;*/
+    margin-left: 44px;
+    float: right;
+    border: transparent;
 }
-
 canvas{
 	position: center;
 	margin-left:1px;
@@ -27,26 +28,25 @@ canvas{
 	cursor: crosshair;
 }
 
-#page{
-	border: solid black 1px;
+#page {
+    border: solid black 1px;
 }
 
-.postIt
-{
-	position: absolute;
-	border: solid #ffb000 1%;
-	background-color: #f0e000;
-	resize: both;
-	overflow: auto;
-	padding: 2px;
+.postIt {
+    position: absolute;
+    border: solid #ffb000 1%;
+    background-color: #f0e000;
+    resize: both;
+    overflow: auto;
+    padding: 2px;
 }
 
-.buttonApp
-{
-	width: 44px ;
-	height: 30px;
+.buttonApp {
+    width: 44px;
+    height: 30px;
 }
 
+<<<<<<< HEAD
 #red{
   background-color: red ;
   border-radius:50%;
@@ -120,3 +120,9 @@ canvas{
 	height:50%;
 	outline:none;
 }
+=======
+.buttonHide {
+    width: 44px;
+    height: 30px;
+}
+>>>>>>> 2c15d209d3f4f0925f39905c3420ed9799b65846
