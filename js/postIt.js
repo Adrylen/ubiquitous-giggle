@@ -63,7 +63,8 @@ function createNew() {
     //bouton turn
     let turn = document.createElement('button');
     turn.setAttribute('class','buttonApp');
-    turn.setAttribute('onclick','Turn()');
+    //turn.setAttribute('onclick','Turn()');
+    turn.addEventListener('click', startRotation);
     navigation.appendChild(turn);
 
     //son icone
@@ -129,7 +130,6 @@ function replace(id){
   else {
     text.remove();
     canvas = document.createElement("canvas");
-    canvas.
     parent.appendChild(canvas);
   }
 }

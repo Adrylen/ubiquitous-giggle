@@ -24,18 +24,34 @@ let x1,y1;
 let d01,d12,scalaire;
 let angle=0,sign=1;
 let rotate = false;
+let block;
 
-document.getElementById("rotation").addEventListener("click", e => {
-    if(!rotate) {
-        let block = document.getElementById("div");
-        x0 = e.pageX; y0 = e.pageY;
-        x1 = block.offsetLeft + block.offsetWidth / 2;
-        y1 = block.offsetTop + block.offsetHeight / 2;
-        d01 = Math.sqrt(Math.pow(x1-x0,2) + Math.pow(y1-y0,2));
+// document.getElementById("rotation").addEventListener("click", e => {
+//     if(!rotate) {
+//         let block = document.getElementById("div");
+//         x0 = e.pageX; y0 = e.pageY;
+//         x1 = block.offsetLeft + block.offsetWidth / 2;
+//         y1 = block.offsetTop + block.offsetHeight / 2;
+//         d01 = Math.sqrt(Math.pow(x1-x0,2) + Math.pow(y1-y0,2));
+//     }
+//     else { angle = ((sign * Math.acos(scalaire / (d01 * d12))) % (2*Math.PI)) * 180 / Math.PI + angle; }
+//     rotate = !rotate;
+// });
+
+function startRotation(e) {
+	if(!rotate) {
+		//let block = document.getElementById("div");
+		block = (e.target.tagName === "IMG") ? e.target.parentNode.parentNode.parentNode : e.target.parentNode.parentNode;
+		x0 = e.pageX; y0 = e.pageY;
+		x1 = block.offsetLeft + block.offsetWidth / 2;
+		y1 = block.offsetTop + block.offsetHeight / 2;
+		d01 = Math.sqrt(Math.pow(x1-x0,2) + Math.pow(y1-y0,2));
+	}
+	else {
+        angle = ((sign * Math.acos(scalaire / (d01 * d12))) % (2*Math.PI)) * 180 / Math.PI + angle;
     }
-    else { angle = ((sign * Math.acos(scalaire / (d01 * d12))) % (2*Math.PI)) * 180 / Math.PI + angle; }
-    rotate = !rotate;
-});
+	rotate = !rotate;
+}
 
 document.addEventListener("mousemove", e => {
     if(rotate) {
@@ -46,6 +62,6 @@ document.addEventListener("mousemove", e => {
         sign = (x0-x1)*(y2-y1) - (x2-x1)*(y0-y1);
         sign = (sign > 0) ? 1 : -1;
         let theta = ((sign * Math.acos(scalaire / (d01 * d12))) % (2*Math.PI)) * 180 / Math.PI + angle;
-        document.getElementById("div").style.transform = "rotate("+theta+"deg)";
+        block.style.transform = "rotate("+theta+"deg)";
 	}
 });
