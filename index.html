@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="css/master.css" />
     <link rel="stylesheet" href="css/post-it.css" />
     <link rel="stylesheet" href="css/fullscreen.css" />
+    <link rel="stylesheet" href="css/keyboard.css" />
     <script type="text/javascript" src="js/Blob.js"></script>
     <script type="text/javascript" src="js/FileSaver.min.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/keyboard.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/dragTest.js"></script>
     <script type="text/javascript" src="js/buttons.js"></script>
     <script type="text/javascript" src="js/postIt.js"></script>
@@ -29,18 +31,18 @@
             <button class="button" title="screen shot" onclick="ScreenShot()"><img src="image/buttons/screenShot.png"/></button>
             <button class="button" title="close" onclick="Close()"><img src="image/buttons/close.png"/></button>
             <button class="button" title="move" onclick="Move()"><img src="image/buttons/move.png"/></button> -->
-            <img class="button" title="turn" type="button" src="image/buttons/turnH.png" onmousedown="this.src='image/buttons/turnB.png'" onmouseup="this.src='image/buttons/turnH.png'" onclick="Turn()"/>
-            <img class="button" title="trash" type="button" src="image/buttons/trashH.png" onmousedown="this.src='image/buttons/trashB.png'" onmouseup="this.src='image/buttons/trashH.png'" onclick="Trash()"/>
-            <img class="button" title="resize" type="button" src="image/buttons/resizeH.png" onmousedown="this.src='image/buttons/resizeB.png'" onmouseup="this.src='image/buttons/resizeH.png'" onclick="Resize()"/>
-            <img class="button" title="fullScreen" type="button" src="image/buttons/fullScreenH.png" onmousedown="this.src='image/buttons/fullScreenB.png'" onmouseup="this.src='image/buttons/fullScreenH.png'" onclick="FullScreen()"/>
-            <img class="button" title="fullTurn" type="button" src="image/buttons/fullTurnH.png" onmousedown="this.src='image/buttons/fullTurnB.png'" onmouseup="this.src='image/buttons/fullTurnH.png'" onclick="FullTurn()"/>
-            <img class="button" title="save" type="button" src="image/buttons/saveH.png" onmousedown="this.src='image/buttons/saveB.png'" onmouseup="this.src='image/buttons/saveH.png'" onclick="Save()"/>
-            <img class="button" title="screenShot" type="button" src="image/buttons/screenShotH.png" onmousedown="this.src='image/buttons/screenShotB.png'" onmouseup="this.src='image/buttons/screenShotH.png'" onclick="ScreenShot()"/>
-            <img class="button" title="move" type="button" src="image/buttons/moveH.png" onmousedown="this.src='image/buttons/moveB.png'" onmouseup="this.src='image/buttons/moveH.png'" onclick="Move()"/>
-            <img class="button" title="moveOK" type="button" src="image/buttons/moveOKH.png" onmousedown="this.src='image/buttons/moveOKB.png'" onmouseup="this.src='image/buttons/moveOKH.png'" onclick="Move()"/>
-            <img class="button" title="stylo" type="button" src="image/buttons/styloH.png" onmousedown="this.src='image/buttons/styloB.png'" onmouseup="this.src='image/buttons/styloH.png'"/>
-            <img class="button" title="close" type="button" src="image/buttons/closeH.png" onmousedown="this.src='image/buttons/closeB.png'" onmouseup="this.src='image/buttons/closeH.png'" onclick="Close()"/>
-            <img class="button" title="turn" type="button" src="image/buttons/hideH.png" onmousedown="this.src='image/buttons/hideB.png'" onmouseup="this.src='image/buttons/hideH.png'"/>
+            <img class="button" title="turn" type="button" src="image/buttons/turnH.png" onmousedown="this.src='image/buttons/turnB.png'" onmouseup="this.src='image/buttons/turnH.png'" onclick="Turn()" />
+            <img class="button" title="trash" type="button" src="image/buttons/trashH.png" onmousedown="this.src='image/buttons/trashB.png'" onmouseup="this.src='image/buttons/trashH.png'" onclick="Trash()" />
+            <img class="button" title="resize" type="button" src="image/buttons/resizeH.png" onmousedown="this.src='image/buttons/resizeB.png'" onmouseup="this.src='image/buttons/resizeH.png'" onclick="Resize()" />
+            <img class="button" title="fullScreen" type="button" src="image/buttons/fullScreenH.png" onmousedown="this.src='image/buttons/fullScreenB.png'" onmouseup="this.src='image/buttons/fullScreenH.png'" onclick="FullScreen()" />
+            <img class="button" title="fullTurn" type="button" src="image/buttons/fullTurnH.png" onmousedown="this.src='image/buttons/fullTurnB.png'" onmouseup="this.src='image/buttons/fullTurnH.png'" onclick="FullTurn()" />
+            <img class="button" title="save" type="button" src="image/buttons/saveH.png" onmousedown="this.src='image/buttons/saveB.png'" onmouseup="this.src='image/buttons/saveH.png'" onclick="Save()" />
+            <img class="button" title="screenShot" type="button" src="image/buttons/screenShotH.png" onmousedown="this.src='image/buttons/screenShotB.png'" onmouseup="this.src='image/buttons/screenShotH.png'" onclick="ScreenShot()" />
+            <img class="button" title="move" type="button" src="image/buttons/moveH.png" onmousedown="this.src='image/buttons/moveB.png'" onmouseup="this.src='image/buttons/moveH.png'" onclick="Move()" />
+            <img class="button" title="moveOK" type="button" src="image/buttons/moveOKH.png" onmousedown="this.src='image/buttons/moveOKB.png'" onmouseup="this.src='image/buttons/moveOKH.png'" onclick="Move()" />
+            <img class="button" title="stylo" type="button" src="image/buttons/styloH.png" onmousedown="this.src='image/buttons/styloB.png'" onmouseup="this.src='image/buttons/styloH.png'" />
+            <img class="button" title="close" type="button" src="image/buttons/closeH.png" onmousedown="this.src='image/buttons/closeB.png'" onmouseup="this.src='image/buttons/closeH.png'" onclick="Close()" />
+            <img class="button" title="turn" type="button" src="image/buttons/hideH.png" onmousedown="this.src='image/buttons/hideB.png'" onmouseup="this.src='image/buttons/hideH.png'" />
         </div>
         <div id="navigation">
             <img src="image/feuillet.png" id="postItGenerate" onclick="createNew()" />

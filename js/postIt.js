@@ -69,7 +69,7 @@ function createNew() {
     //bouton full screen
     let fullscreen = document.createElement('img');
     fullscreen.setAttribute('class', 'buttonApp');
-    fullscreen.setAttribute('onclick', 'fullscreen('+postIt.id+')');
+    fullscreen.setAttribute('onclick', 'fullscreen(' + postIt.id + ')');
     fullscreen.setAttribute('src', 'image/buttons/fullScreenH.png');
     navigation.appendChild(fullscreen);
 
@@ -120,6 +120,7 @@ function createNew() {
     let text = document.createElement('textarea');
     text.setAttribute('type', 'text');
     postIt.appendChild(text);
+    VKI_attach(text);
     text.setAttribute('style.resize', 'none');
     text.style.width = 70 + '%';
     text.style.height = 70 + '%';
@@ -203,7 +204,7 @@ function replace(id) {
     var canvas = parent.getElementsByTagName("canvas")[0];
 
     if (text === undefined) {
-      color.style.visibility = "hidden";
+        color.style.visibility = "hidden";
         canvas.remove();
         //  bouton.hide();
         text = document.createElement("textarea");
