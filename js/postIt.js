@@ -1,4 +1,14 @@
+// Variables :
 var number = 0;
+var color = "#000000";
+var painting = false;
+var started = false;
+var width_brush = 5;
+var cursorX, cursorY;
+var restoreCanvasArray = [];
+var restoreCanvasIndex = 0;
+var context;
+var nbCanvas = 0;
 
 function createNew() {
     number = number + 1;
@@ -30,7 +40,7 @@ function createNew() {
     let trash = document.createElement('button');
     trash.setAttribute('id','trash1');
     trash.classList.add('buttonApp');
-    trash.setAttribute('onclick','Trash("postIt"+number+"")');
+    trash.setAttribute('onclick','Trash("postIt'+number+'")');
     navigation.appendChild(trash);
 
     //son icone
@@ -111,17 +121,74 @@ function createNew() {
     text.style.width=70+'%';
     text.style.height=70+'%';
     text.style.bottom= 0 +'%';
+    // bouton bleu
+    let blue = document.createElement('button');
+    blue.setAttribute('id','blue');
+    blue.setAttribute('onclick','changeColor("blue")');
+    blue.setAttribute('class','button')
+    navigation.appendChild(blue);
+    //bouton rouge
+    let red = document.createElement('button');
+    red.setAttribute('id','red');
+    red.setAttribute('onclick','changeColor("red")');
+    red.setAttribute('class','button')
+    navigation.appendChild(red);
+    //bouton noir
+      let black = document.createElement('button');
+    black.setAttribute('id','black');
+    black.setAttribute('onclick','changeColor("black")');
+    black.setAttribute('class','button')
+    navigation.appendChild(black);
+    //bouton yellow
+    let yellow = document.createElement('button');
+    yellow.setAttribute('id','yellow');
+    yellow.setAttribute('onclick','changeColor("yellow")');
+    yellow.setAttribute('class','button')
+    navigation.appendChild(yellow);
+    //bouton purple
+    let purple = document.createElement('button');
+    purple.setAttribute('id','purple');
+    purple.setAttribute('onclick','changeColor("purple")');
+    purple.setAttribute('class','button')
+    navigation.appendChild(purple);
+    //bouton rose
+    let pink = document.createElement('button');
+    pink.setAttribute('id','pink');
+    pink.setAttribute('onclick','changeColor("pink")');
+    pink.setAttribute('class','button')
+    navigation.appendChild(pink);
+    //bouton marron
+    let brown = document.createElement('button');
+    brown.setAttribute('id','brown');
+    brown.setAttribute('onclick','changeColor("brown")');
+    brown.setAttribute('class','button')
+    navigation.appendChild(brown);
+    // bouton green
+    let green = document.createElement('button');
+    green.setAttribute('id','green');
+    green.setAttribute('onclick','changeColor("green")');
+    green.setAttribute('class','button')
+    navigation.appendChild(green);
+    // bouton blanc
+    let white = document.createElement('button');
+    white.setAttribute('id','white');
+    white.setAttribute('onclick','changeColor("white")');
+    white.setAttribute('class','button')
+    navigation.appendChild(white);
 
     document.getElementById('page').appendChild(postIt);
 }
 
+
 function replace(id){
   var parent = document.getElementById(id);
-  var text = document.getElementById(id).getElementsByTagName("textarea")[0];;
-  var canvas = document.getElementById(id).getElementsByTagName("canvas")[0]; ;
+//  var bouton = document.getElementsByClassName(button);
+  var text = document.getElementById(id).getElementsByTagName("textarea")[0];
+  var canvas = document.getElementById(id).getElementsByTagName("canvas")[0];
 
   if(text === undefined) {
     canvas.remove();
+  //  bouton.hide();
     text = document.createElement("textarea");
     text.setAttribute('type','text');
     parent.appendChild(text);
@@ -129,7 +196,10 @@ function replace(id){
   else {
     text.remove();
     canvas = document.createElement("canvas");
-    canvas.
+    var div = document.createElement("div");
+    canvas.appendChild(div);
+    canvas.setAttribute("id","postIt'+number+'");
+    canvas.setAttribute("onclick","createCanvas()");
     parent.appendChild(canvas);
   }
 }

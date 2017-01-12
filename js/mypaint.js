@@ -62,7 +62,6 @@ function createCanvas() {
             drawLine();
         }
     }, false);
-    document.getElementById("largeurs_pinceau").appendChild(mycanva);
 }
 
 // Fonction qui dessine une ligne :
