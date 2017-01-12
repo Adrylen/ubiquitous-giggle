@@ -27,8 +27,14 @@ function ScreenShot() {
     alert("tu vas prendre une photo de la table en entier");
 }
 
-function Move() {
-    alert("tu vas pouvoir bouger ça vers tes collègue");
+function Move(name) {
+    var currentPostit = document.getElementById(name);
+    if (!currentPostit.draggable) {
+        currentPostit.setAttribute('draggable', true);
+    } else {
+        currentPostit.setAttribute('draggable', false);
+    }
+
 }
 
 function Close() {
