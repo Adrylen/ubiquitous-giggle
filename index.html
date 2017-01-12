@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="content-type" charset="utf-8" />
     <title>Espace de travail</title>
     <link rel="stylesheet" href="css/buttons.css" />
     <link rel="stylesheet" href="css/master.css" />
     <link rel="stylesheet" href="css/post-it.css" />
-    <script type="text/javascript" src="js/buttons.js"></script>
     <script type="text/javascript" src="js/dragTest.js"></script>
+    <script type="text/javascript" src="js/buttons.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/postIt.js"></script>
-
+    <script type="text/javascript" src="js/mypaint.js"></script>
 </head>
 
 <body>
@@ -31,21 +33,14 @@
             </form>
         </div>
         <div id="navigation">
-          <!--<div class="boutons">
-              <form>
-                  <button class="button" title="trash" onclick="Trash()"><img src="image/buttons/trash.png"/></button>
-              </form>
-          </div>-->
-        <img src="image/feuillet.png" id="postItGenerate" onclick="createNew()" />
+            <img src="image/feuillet.png" id="postItGenerate" onclick="createNew()" />
         </div>
-
-        <!--<div id="drag1" draggable="true" ondragstart="drag(event)">
-            <input type="text" id="text1">
-        </div>-->
+        <!-- <div id="drag1" draggable="true" ondragstart="drag(event)">
+			<input type="text" id="text1">
+		</div> -->
         <div id="resizeAuto" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     </div>
-    <!--
-			<script type="text/javascript" src="js/rotation.js"></script>
-		-->
+    <script type="text/javascript" src="js/rotation.js"></script>
 </body>
+
 </html>
