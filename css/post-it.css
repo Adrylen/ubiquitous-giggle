@@ -46,7 +46,6 @@ canvas{
     height: 30px;
 }
 
-<<<<<<< HEAD
 #red{
   background-color: red ;
   border-radius:50%;
@@ -120,9 +119,3 @@ canvas{
 	height:50%;
 	outline:none;
 }
-=======
-.buttonHide {
-    width: 44px;
-    height: 30px;
-}
->>>>>>> 2c15d209d3f4f0925f39905c3420ed9799b65846

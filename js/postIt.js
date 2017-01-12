@@ -121,60 +121,70 @@ function createNew() {
     text.style.width=70+'%';
     text.style.height=70+'%';
     text.style.bottom= 0 +'%';
+
     // bouton bleu
+    let color = document.createElement('div');
     let blue = document.createElement('button');
     blue.setAttribute('id','blue');
     blue.setAttribute('onclick','changeColor("blue")');
-    blue.setAttribute('class','button')
     navigation.appendChild(blue);
+    color.appendChild(blue);
     //bouton rouge
     let red = document.createElement('button');
     red.setAttribute('id','red');
     red.setAttribute('onclick','changeColor("red")');
-    red.setAttribute('class','button')
     navigation.appendChild(red);
+    color.appendChild(red);
+
     //bouton noir
       let black = document.createElement('button');
     black.setAttribute('id','black');
     black.setAttribute('onclick','changeColor("black")');
-    black.setAttribute('class','button')
     navigation.appendChild(black);
+    color.appendChild(black);
+
     //bouton yellow
     let yellow = document.createElement('button');
     yellow.setAttribute('id','yellow');
     yellow.setAttribute('onclick','changeColor("yellow")');
-    yellow.setAttribute('class','button')
     navigation.appendChild(yellow);
+    color.appendChild(yellow);
+
     //bouton purple
     let purple = document.createElement('button');
     purple.setAttribute('id','purple');
     purple.setAttribute('onclick','changeColor("purple")');
-    purple.setAttribute('class','button')
     navigation.appendChild(purple);
+    color.appendChild(purple);
+
     //bouton rose
     let pink = document.createElement('button');
     pink.setAttribute('id','pink');
     pink.setAttribute('onclick','changeColor("pink")');
-    pink.setAttribute('class','button')
     navigation.appendChild(pink);
+    color.appendChild(pink);
+
     //bouton marron
     let brown = document.createElement('button');
     brown.setAttribute('id','brown');
     brown.setAttribute('onclick','changeColor("brown")');
-    brown.setAttribute('class','button')
     navigation.appendChild(brown);
+    color.appendChild(brown);
+
     // bouton green
     let green = document.createElement('button');
     green.setAttribute('id','green');
     green.setAttribute('onclick','changeColor("green")');
-    green.setAttribute('class','button')
     navigation.appendChild(green);
+    color.appendChild(green);
+
     // bouton blanc
     let white = document.createElement('button');
     white.setAttribute('id','white');
     white.setAttribute('onclick','changeColor("white")');
-    white.setAttribute('class','button')
     navigation.appendChild(white);
+    color.appendChild(white);
+
 
     document.getElementById('page').appendChild(postIt);
 }
@@ -182,7 +192,7 @@ function createNew() {
 
 function replace(id){
   var parent = document.getElementById(id);
-  var bouton = document.getElementsByClassName(button);
+  var bouton = document.
   var text = document.getElementById(id).getElementsByTagName("textarea")[0];
   var canvas = document.getElementById(id).getElementsByTagName("canvas")[0];
 
