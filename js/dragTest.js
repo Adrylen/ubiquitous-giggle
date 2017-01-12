@@ -28,6 +28,7 @@ function drop(event) {
             event.target.appendChild(document.getElementById(offset[2]));
             dm.style.height = "100%";
             dm.style.width = "100%";
+            console.log(dm.style.width);
             dm.classList[1] = "intoAuto";
             dm.style.left = 0;
             dm.style.top = 0;

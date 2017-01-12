@@ -73,7 +73,7 @@ function createNew() {
     fullscreen.addEventListener("mouseup", mouseUp);
     fullscreen.type = "button";
     fullscreen.setAttribute('class', 'buttonApp');
-    fullscreen.setAttribute('onclick', 'FullScreen()');
+    fullscreen.setAttribute('onclick', 'fullscreen(' + postIt.id + ')');
     fullscreen.setAttribute('src', 'image/buttons/fullScreenH.png');
     navigation.appendChild(fullscreen);
 
@@ -99,8 +99,9 @@ function createNew() {
     save.addEventListener("mouseup", mouseUp);
     save.type = "button";
     save.setAttribute('class', 'buttonApp');
-    save.setAttribute('onclick', 'Save()');
+    // save.setAttribute('onclick', 'Save()');
     save.setAttribute('src', 'image/buttons/saveH.png');
+	save.addEventListener('click', download);
     navigation.appendChild(save);
 
 
@@ -135,6 +136,7 @@ function createNew() {
     let text = document.createElement('textarea');
     text.setAttribute('type', 'text');
     postIt.appendChild(text);
+    VKI_attach(text);
     text.setAttribute('style.resize', 'none');
     text.style.width = 70 + '%';
     text.style.height = 70 + '%';
@@ -219,7 +221,7 @@ function replace(id) {
     var canvas = parent.getElementsByTagName("canvas")[0];
 
     if (text === undefined) {
-      color.style.visibility = "hidden";
+        color.style.visibility = "hidden";
         canvas.remove();
         //  bouton.hide();
         text = document.createElement("textarea");

@@ -8,12 +8,3 @@
 	overflow: hidden;
 	z-index: 999;
 }
-#element
-{
-	background-color: blue;
-	display: inline-block;
-}
-#fullscreen, textarea
-{
-	display: block;
-}
