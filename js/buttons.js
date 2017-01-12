@@ -12,8 +12,11 @@ function FullScreen() {
     alert("ça va pop en gros devant tout le monde");
 }
 
-function FullTurn() {
-    alert("tout va tourner de 90°");
+function FullTurn(id) {
+    if(document.getElementById('page').style.transform === "rotate(180deg)")
+        document.getElementById('page').style.transform = "rotate(0deg)";
+    else
+        document.getElementById('page').style.transform = "rotate(180deg)";
 }
 
 function Save() {

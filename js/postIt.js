@@ -70,7 +70,7 @@ function createNew() {
     //bouton full screen
     let fullscreen = document.createElement('button');
     fullscreen.setAttribute('class', 'buttonApp');
-    fullscreen.setAttribute('onclick', 'FullScreen()');
+    fullscreen.setAttribute('onclick', 'fullscreen('+postIt.id+')');
     navigation.appendChild(fullscreen);
 
     //son icone
