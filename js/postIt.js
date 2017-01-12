@@ -89,8 +89,9 @@ function createNew() {
     //bouton save
     let save = document.createElement('img');
     save.setAttribute('class', 'buttonApp');
-    save.setAttribute('onclick', 'Save()');
+    // save.setAttribute('onclick', 'Save()');
     save.setAttribute('src', 'image/buttons/saveH.png');
+	save.addEventListener('click', download);
     navigation.appendChild(save);
 
 

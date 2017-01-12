@@ -19,10 +19,6 @@ function FullTurn(id) {
         document.getElementById('page').style.transform = "rotate(180deg)";
 }
 
-function Save() {
-    alert("tu vas enregistrer dans tes téléchargement")
-}
-
 function ScreenShot() {
     alert("tu vas prendre une photo de la table en entier");
 }
