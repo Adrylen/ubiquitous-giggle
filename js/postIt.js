@@ -56,6 +56,8 @@ function createNew() {
     iTrash.setAttribute('src', 'image/buttons/trash.png');
     trash.appendChild(iTrash);
 
+    trash.style.visibility = "hidden";
+
     //bouton resize
     let resize = document.createElement('button');
     resize.setAttribute('class', 'buttonApp');
@@ -67,6 +69,8 @@ function createNew() {
     iResize.setAttribute('src', 'image/buttons/resize.png');
     resize.appendChild(iResize);
 
+    resize.style.visibility = "hidden";
+
     //bouton full screen
     let fullscreen = document.createElement('button');
     fullscreen.setAttribute('class', 'buttonApp');
@@ -77,6 +81,8 @@ function createNew() {
     let iFullscreen = document.createElement('img');
     iFullscreen.setAttribute('src', 'image/buttons/fullScreen.png');
     fullscreen.appendChild(iFullscreen);
+
+    fullscreen.style.visibility = "hidden";
 
     //bouton turn
     let turn = document.createElement('button');
@@ -90,6 +96,8 @@ function createNew() {
     iTurn.setAttribute('src', 'image/buttons/turn.png');
     turn.appendChild(iTurn);
 
+    turn.style.visibility = "hidden";
+
     //bouton save
     let save = document.createElement('button');
     save.setAttribute('class', 'buttonApp');
@@ -100,6 +108,8 @@ function createNew() {
     let iSave = document.createElement('img');
     iSave.setAttribute('src', 'image/buttons/save.png');
     save.appendChild(iSave);
+
+    save.style.visibility = "hidden";
 
     //bouton full change
     let change = document.createElement('button');
@@ -112,6 +122,8 @@ function createNew() {
     ichange.setAttribute('src', 'image/buttons/change.png');
     change.appendChild(ichange);
 
+    change.style.visibility = "hidden";
+
     //bouton move
     let move = document.createElement('button');
     move.setAttribute('class', 'buttonApp');
@@ -122,6 +134,8 @@ function createNew() {
     let iMove = document.createElement('img');
     iMove.setAttribute('src', 'image/buttons/move.png');
     move.appendChild(iMove);
+
+    move.style.visibility = "hidden";
 
     let text = document.createElement('textarea');
     text.setAttribute('type', 'text');
