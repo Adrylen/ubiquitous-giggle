@@ -12,10 +12,6 @@ function FullScreen() {
     alert("ça va pop en gros devant tout le monde");
 }
 
-function Turn() {
-    alert("fais toi plaisir à tourner comme tu veux");
-}
-
 function FullTurn() {
     alert("tout va tourner de 90°");
 }

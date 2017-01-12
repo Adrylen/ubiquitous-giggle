@@ -4,7 +4,12 @@
 		<title>Recup</title>
 	</head>
 	<body>
-		<img src="../image/pika.png" />
+		<div id="coucou">
+			<button></button>
+			<button></button>
+			<textarea></textarea>
+		</div>
+		<img src="../image/postit.jpg" />
 		<img src="../image/circle.jpg" width="40%" height="40%" />
 		<script type="text/javascript">
 			let obj = document.getElementsByTagName('img');
@@ -13,6 +18,9 @@
 					console.log(e.target.getAttribute('src'));
 				});
 			});
+
+			let div = document.getElementById('coucou');
+			console.log(div.getElementsByTagName('textarea'));
 		</script>
 	</body>
 </html>

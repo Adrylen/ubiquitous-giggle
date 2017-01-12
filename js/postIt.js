@@ -73,7 +73,8 @@ function createNew() {
     //bouton turn
     let turn = document.createElement('button');
     turn.setAttribute('class','buttonApp');
-    turn.setAttribute('onclick','Turn()');
+    //turn.setAttribute('onclick','Turn()');
+    turn.addEventListener('click', startRotation);
     navigation.appendChild(turn);
 
     //son icone
@@ -189,7 +190,6 @@ function createNew() {
     document.getElementById('page').appendChild(postIt);
 }
 
-
 function replace(id){
   var parent = document.getElementById(id);
   var bouton = document.
@@ -214,6 +214,6 @@ function replace(id){
   }
 }
 
-function Trash(id){
-  document.getElementById(id).remove();
+function Trash(id) {
+    document.getElementById(id).remove();
 }

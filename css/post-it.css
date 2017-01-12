@@ -32,13 +32,14 @@ canvas{
     border: solid black 1px;
 }
 
-.postIt {
-    position: absolute;
-    border: solid #ffb000 1%;
-    background-color: #f0e000;
-    resize: both;
-    overflow: auto;
-    padding: 2px;
+.postIt
+{
+	position: absolute;
+	border: solid #ffb000 1%;
+	background-color: #f0e000;
+	resize: both;
+	overflow: hidden;
+	padding: 2px;
 }
 
 .buttonApp {
@@ -118,4 +119,10 @@ canvas{
 	width:10%;
 	height:50%;
 	outline:none;
+}
+<<<<<<< HEAD
+=======
+.buttonHide {
+    width: 44px;
+    height: 30px;
 }
