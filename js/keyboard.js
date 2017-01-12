@@ -7555,7 +7555,7 @@ var VKI_attach, VKI_close;
      * Position the keyboard
      *
      */
-    this.VKI_position = function(force) {
+    /*this.VKI_position = function(force) {
         if (self.VKI_target) {
             var kPos = VKI_findPos(self.VKI_keyboard),
                 wDim = VKI_innerDimensions(),
@@ -7589,6 +7589,59 @@ var VKI_attach, VKI_close;
                         if (self.VKI_isIE6) self.VKI_iframe.style.display = (top < 0 || left < 0 || bottom < 0 || right < 0) ? "none" : "";
                     }
                 }
+                console.log(iPos[1]);
+                console.log(fudge);
+                console.log(iPos[1] - ((self.VKI_target.keyboardPosition == "fixed" && !self.VKI_isIE && !self.VKI_isMoz) ? sDis[1] : 0) + fudge + "px");
+                self.VKI_keyboard.style.top = iPos[1] - ((self.VKI_target.keyboardPosition == "fixed" && !self.VKI_isIE && !self.VKI_isMoz) ? sDis[1] : 0) + fudge + "px";
+                self.VKI_keyboard.style.left = Math.max(10, Math.min(wDim[0] - self.VKI_keyboard.offsetWidth - 25, iPos[0])) + "px";
+                if (self.VKI_isIE6) {
+                    self.VKI_iframe.style.width = self.VKI_keyboard.offsetWidth + "px";
+                    self.VKI_iframe.style.height = self.VKI_keyboard.offsetHeight + "px";
+                    self.VKI_iframe.style.top = self.VKI_keyboard.style.top;
+                    self.VKI_iframe.style.left = self.VKI_keyboard.style.left;
+                }
+            }
+            if (force === true) self.VKI_position();
+        }
+    };*/
+    this.VKI_position = function(force) {
+        if (self.VKI_target) {
+            console.log(self.VKI_target);
+            var kPos = VKI_findPos(self.VKI_keyboard),
+                wDim = VKI_innerDimensions(),
+                sDis = VKI_scrollDist();
+            var place = false,
+                fudge = self.VKI_target.offsetHeight + 3;
+            if (force !== true) {
+                if (kPos[1] + self.VKI_keyboard.offsetHeight - sDis[1] - wDim[1] > 0) {
+                    place = true;
+                    fudge = -self.VKI_keyboard.offsetHeight - 3;
+                } else if (kPos[1] - sDis[1] < 0) place = true;
+            }
+            if (place || force === true) {
+                var iPos = VKI_findPos(self.VKI_target),
+                    scr = self.VKI_target;
+                while (scr = scr.parentNode) {
+                    if (scr == document.body) break;
+                    if (scr.scrollHeight > scr.offsetHeight || scr.scrollWidth > scr.offsetWidth) {
+                        if (!scr.getAttribute("VKI_scrollListener")) {
+                            scr.setAttribute("VKI_scrollListener", true);
+                            VKI_addListener(scr, 'scroll', function() { self.VKI_position(true); }, false);
+                        } // Check if the input is in view
+                        var pPos = VKI_findPos(scr),
+                            oTop = iPos[1] - pPos[1],
+                            oLeft = iPos[0] - pPos[0];
+                        var top = oTop + self.VKI_target.offsetHeight;
+                        var left = oLeft + self.VKI_target.offsetWidth;
+                        var bottom = scr.offsetHeight - oTop - self.VKI_target.offsetHeight;
+                        var right = scr.offsetWidth - oLeft - self.VKI_target.offsetWidth;
+                        self.VKI_keyboard.style.display = (top < 0 || left < 0 || bottom < 0 || right < 0) ? "none" : "";
+                        if (self.VKI_isIE6) self.VKI_iframe.style.display = (top < 0 || left < 0 || bottom < 0 || right < 0) ? "none" : "";
+                    }
+                }
+                console.log(iPos[1]);
+                console.log(fudge);
+                console.log(iPos[1] - ((self.VKI_target.keyboardPosition == "fixed" && !self.VKI_isIE && !self.VKI_isMoz) ? sDis[1] : 0) + fudge + "px");
                 self.VKI_keyboard.style.top = iPos[1] - ((self.VKI_target.keyboardPosition == "fixed" && !self.VKI_isIE && !self.VKI_isMoz) ? sDis[1] : 0) + fudge + "px";
                 self.VKI_keyboard.style.left = Math.max(10, Math.min(wDim[0] - self.VKI_keyboard.offsetWidth - 25, iPos[0])) + "px";
                 if (self.VKI_isIE6) {

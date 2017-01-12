@@ -124,6 +124,10 @@ function createNew() {
     text.style.width = 70 + '%';
     text.style.height = 70 + '%';
     text.style.bottom = 0 + '%';
+    console.log("top du text");
+    console.log(text.offsetTop);
+    console.log(text.style.height);
+    console.log(postIt.style.height);
 
     // bouton bleu
     let color = document.createElement('div');
