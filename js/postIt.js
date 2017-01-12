@@ -25,7 +25,7 @@ function createNew() {
     //div principale
     let postIt = document.createElement('div');
     postIt.setAttribute('id', 'postIt' + number);
-    //postIt.setAttribute('draggable', true);
+    postIt.setAttribute('draggable', true);
     postIt.setAttribute('ondragstart', 'drag(event)');
     postIt.classList.add('postIt');
     postIt.style.width = sizeW + 'px';
@@ -58,7 +58,7 @@ function createNew() {
     trash.type = "button";
     trash.addEventListener("mousedown", mouseDown);
     trash.addEventListener("mouseup", mouseUp);
-    trash.setAttribute('class','buttonApp');
+    trash.setAttribute('class', 'buttonApp');
     trash.setAttribute('onclick', 'Trash("postIt' + number + '")');
     trash.setAttribute('src', 'image/buttons/trashH.png');
     navigation.appendChild(trash);
@@ -101,7 +101,7 @@ function createNew() {
     save.setAttribute('class', 'buttonApp');
     // save.setAttribute('onclick', 'Save()');
     save.setAttribute('src', 'image/buttons/saveH.png');
-	save.addEventListener('click', download);
+    save.addEventListener('click', download);
     navigation.appendChild(save);
 
 
@@ -247,23 +247,24 @@ function Trash(id) {
     document.getElementById(id).remove();
 }
 
-function mouseDown(event){
-  this.src='image/buttons/'+event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g)+'B.png';
+function mouseDown(event) {
+    this.src = 'image/buttons/' + event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g) + 'B.png';
 }
 
-function mouseUp(event){
-  this.src='image/buttons/'+event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g)+'H.png';
+function mouseUp(event) {
+    this.src = 'image/buttons/' + event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g) + 'H.png';
 }
 
 function mouseDownS(event) {
-  if(event.target.getAttribute('src').match(/OK/g) !== null)
-    this.src='image/buttons/'+event.target.getAttribute('src').match(/[a-zA-Z]+(?=OK[HB]\.png)/g)+'OKB.png';
-  else
-    this.src='image/buttons/'+event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g)+'B.png';
+    if (event.target.getAttribute('src').match(/OK/g) !== null)
+        this.src = 'image/buttons/' + event.target.getAttribute('src').match(/[a-zA-Z]+(?=OK[HB]\.png)/g) + 'OKB.png';
+    else
+        this.src = 'image/buttons/' + event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g) + 'B.png';
 }
+
 function mouseUpS(event) {
-  if(event.target.getAttribute('src').match(/OK/g) !== null)
-    this.src='image/buttons/'+event.target.getAttribute('src').match(/[a-zA-Z]+(?=OK[HB]\.png)/g)+'H.png';
-  else
-    this.src='image/buttons/'+event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g)+'OKH.png';
+    if (event.target.getAttribute('src').match(/OK/g) !== null)
+        this.src = 'image/buttons/' + event.target.getAttribute('src').match(/[a-zA-Z]+(?=OK[HB]\.png)/g) + 'H.png';
+    else
+        this.src = 'image/buttons/' + event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g) + 'OKH.png';
 }
