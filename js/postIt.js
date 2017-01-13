@@ -218,14 +218,16 @@ function replace(id) {
         text = document.createElement("textarea");
         text.setAttribute('type', 'text');
         parent.appendChild(text);
+        VKI_attach(text);
     } else {
         color.style.visibility = 'visible';
+        //text.setAttribute("VKI_attached", "false");
         text.remove();
-        parent.style.width = 302+'px';
-        parent.style.height = 360+'px';
-        createCanvas(parent,number);
-  /*      console.log(parent.offsetTop);  // X
-        console.log(parent.offsetLeft); // Y*/
+        parent.style.width = 302 + 'px';
+        parent.style.height = 360 + 'px';
+        createCanvas(parent, number);
+        /*      console.log(parent.offsetTop);  // X
+              console.log(parent.offsetLeft); // Y*/
     }
 }
 
