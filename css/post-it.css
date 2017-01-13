@@ -12,6 +12,7 @@ textarea {
     margin-bottom: 2%;
     float: right;
     border: transparent;
+    font-size: 1em;
 }
 
 canvas {

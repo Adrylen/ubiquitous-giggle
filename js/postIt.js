@@ -22,6 +22,7 @@ function createNew() {
     postIt.classList.add('notAuto');
     postIt.style.width = sizeW + 'px';
     postIt.style.height = sizeH + 'px';
+    postIt.addEventListener('resize', (e) => {console.log("GO");});
 
     //div des boutons
     let navigation = document.createElement('div');
