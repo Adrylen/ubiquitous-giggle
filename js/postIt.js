@@ -130,6 +130,7 @@ function createNew() {
     text.style.height = 70 + '%';
     text.style.bottom = 0 + '%';
 
+
     // bouton bleu
     let color = document.createElement('div');
     color.classList.add('color');
@@ -222,9 +223,6 @@ function replace(parent) {
     }
 }
 
-function Trash(id) {
-    document.getElementById(id).remove();
-}
 
 function mouseDown(event) {
     this.src = 'image/buttons/' + event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g) + 'B.png';

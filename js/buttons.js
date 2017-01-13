@@ -1,25 +1,36 @@
-function Trash() {
-    alert("tu vas jeter un truc là");
+let screenStyle;
+
+function Trash(id) {
+    document.getElementById(id).remove();
 }
 
-function Resize() {
-    alert("resize comme tu veux bro");
+function fullscreen(element) {
+	if(Object.keys(element.classList).some(key => element.classList[key] == "full") === false) {
+		element.classList.add("full");
+		screenStyle = {
+			top: element.style.top,
+			left: element.style.left,
+			width: element.style.width,
+			height: element.style.height,
+		};
+		element.removeAttribute('style');
+	}
+	else {
+		element.classList.remove("full");
+		element.style.top = screenStyle.top;
+		element.style.left = screenStyle.left;
+		element.style.width = screenStyle.width;
+		element.style.height = screenStyle.height;
+	}
 }
 
-function FullScreen() {
-    alert("ça va pop en gros devant tout le monde");
-}
-
-function FullTurn(id) {
+function FullTurn() {
     if(document.getElementById('page').style.transform === "rotate(180deg)")
         document.getElementById('page').style.transform = "rotate(0deg)";
     else
         document.getElementById('page').style.transform = "rotate(180deg)";
 }
 
-function ScreenShot() {
-    alert("tu vas prendre une photo de la table en entier");
-}
 
 function Move(name) {
     var currentPostit = document.getElementById(name);
@@ -31,9 +42,6 @@ function Move(name) {
 
 }
 
-function Close() {
-    alert("es-tu sûr de vouloir fermer ça?");
-}
 
 function hide(element) {
     let div = element.getElementsByClassName('boutons')[0];
@@ -50,15 +58,4 @@ function hide(element) {
         }
         button.setAttribute('toHide', 'true');
     }
-    // if (areHidden) {
-    //     for (var i = 0; i < document.getElementsByClassName("buttonApp").length; i++) {
-    //         document.getElementsByClassName("buttonApp")[i].style.visibility = "visible";
-    //     }
-    //     areHidden = false;
-    // } else {
-    //     for (var i = 0; i < document.getElementsByClassName("buttonApp").length; i++) {
-    //         document.getElementsByClassName("buttonApp")[i].style.visibility = "hidden";
-    //     }
-    //     areHidden = true;
-    // }
 }
