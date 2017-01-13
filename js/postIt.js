@@ -220,7 +220,6 @@ function replace(id) {
         VKI_attach(text);
     } else {
         color.style.visibility = 'visible';
-        //text.setAttribute("VKI_attached", "false");
         text.remove();
         parent.style.width = 302 + 'px';
         parent.style.height = 360 + 'px';
