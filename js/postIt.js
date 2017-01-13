@@ -22,7 +22,7 @@ function createNew() {
     postIt.classList.add('notAuto');
     postIt.style.width = sizeW + 'px';
     postIt.style.height = sizeH + 'px';
-    postIt.addEventListener('resize', (e) => {console.log("GO");});
+    postIt.addEventListener('resize', (e) => { console.log("GO"); });
 
     //div des boutons
     let navigation = document.createElement('div');
@@ -129,7 +129,7 @@ function createNew() {
     postIt.appendChild(text);
     VKI_attach(text);
     text.setAttribute('style.resize', 'none');
-    text.style.width = 70 + '%';
+    text.style.width = 95 + '%';
     text.style.height = 70 + '%';
     text.style.bottom = 0 + '%';
 
@@ -206,24 +206,26 @@ function createNew() {
 }
 
 function replace(parent) {
-    var color = parent.getElementsByClassName('color')[0];
-    var text = parent.getElementsByTagName("textarea")[0];
-    var canvas = parent.getElementsByTagName("canvas")[0];
-    if (text === undefined) {
-        color.style.visibility = "hidden";
-        canvas.remove();
-        text = document.createElement("textarea");
-        text.setAttribute('type', 'text');
-        parent.appendChild(text);
-        VKI_attach(text);
-    } else {
-        color.style.visibility = 'visible';
-        text.remove();
-        if (parent.classList[1] == "notAuto") {
-            parent.style.width = 302 + 'px';
-            parent.style.height = 360 + 'px';
+    if (parent.classList[1] == "notAuto") {
+        var color = parent.getElementsByClassName('color')[0];
+        var text = parent.getElementsByTagName("textarea")[0];
+        var canvas = parent.getElementsByTagName("canvas")[0];
+        if (text === undefined) {
+            color.style.visibility = "hidden";
+            canvas.remove();
+            text = document.createElement("textarea");
+            text.setAttribute('type', 'text');
+            parent.appendChild(text);
+            VKI_attach(text);
+        } else {
+            color.style.visibility = 'visible';
+            text.remove();
+            if (parent.classList[1] == "notAuto") {
+                parent.style.width = 302 + 'px';
+                parent.style.height = 360 + 'px';
+            }
+            createCanvas(parent);
         }
-        createCanvas(parent);
     }
 }
 
