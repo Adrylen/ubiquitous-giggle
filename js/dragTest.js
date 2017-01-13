@@ -70,7 +70,6 @@ function drop_outside(event) {
             dm.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
         }
 
-
         if (dm.classList[1] != "notAuto" || dm.classList[1] === "") {
             dm.classList.remove('intoAuto');
             dm.classList.add('notAuto');
