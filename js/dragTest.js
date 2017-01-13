@@ -57,7 +57,7 @@ function drop_outside(event) {
     if (inAutoDisplay == 0) {
         var offset = event.dataTransfer.getData("text").split(',');
         var dm = document.getElementById(offset[2]);
-        console.log(dm);
+        console.log("OK",dm);
         if (dm.classList[1] === "intoAuto") {
             dm.style.height = values.height - 6 + "px";
             dm.style.width = values.width - 6 + "px";
@@ -72,7 +72,8 @@ function drop_outside(event) {
 
 
         if (dm.classList[1] != "notAuto" || dm.classList[1] === "") {
-            dm.classList[1] = "notAuto";
+            dm.classList.remove('intoAuto');
+            dm.classList.add('notAuto');
             event.target.appendChild(document.getElementById(offset[2]));
         }
         event.preventDefault();
