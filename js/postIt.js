@@ -19,8 +19,7 @@ function createNew() {
     postIt.setAttribute('draggable', true);
     postIt.setAttribute('ondragstart', 'drag(event)');
     postIt.classList.add('postIt');
-    postIt.style.top = generate.style.top;
-    postIt.style.left = generate.style.left;
+    postIt.classList.add('notAuto');
     postIt.style.width = sizeW + 'px';
     postIt.style.height = sizeH + 'px';
 
@@ -39,8 +38,8 @@ function createNew() {
     hide.addEventListener("mousedown", mouseDown);
     hide.addEventListener("mouseup", mouseUp);
     hide.setAttribute('class', 'buttonHide');
-    hide.setAttribute('toHide',true);
-    hide.setAttribute('onclick', 'hide('+postIt.id+')');
+    hide.setAttribute('toHide', true);
+    hide.setAttribute('onclick', 'hide(' + postIt.id + ')');
     hide.setAttribute('src', 'image/buttons/hideH.png');
 
     navigation.appendChild(hide);
@@ -104,7 +103,7 @@ function createNew() {
     change.addEventListener("mouseup", mouseUp);
     change.type = "button";
     change.setAttribute('class', 'buttonApp');
-    change.setAttribute('onclick', 'replace('+postIt.id+')');
+    change.setAttribute('onclick', 'replace(' + postIt.id + ')');
     change.setAttribute('src', 'image/buttons/styloH.png');
     navigation.appendChild(change);
 
@@ -160,7 +159,7 @@ function createNew() {
     //bouton jaune
     let yellow = document.createElement('button');
     yellow.setAttribute('id', 'yellow');
-    yellow.setAttribute('onclick', 'changeColor("yellow")');
+    yellow.setAttribute('onclick', 'changeColor("#F8F587")');
     navigation.appendChild(yellow);
     color.appendChild(yellow);
 
@@ -220,8 +219,8 @@ function replace(parent) {
     } else {
         color.style.visibility = 'visible';
         text.remove();
-        parent.style.width = 302+'px';
-        parent.style.height = 360+'px';
+        parent.style.width = 302 + 'px';
+        parent.style.height = 360 + 'px';
         createCanvas(parent);
     }
 }
