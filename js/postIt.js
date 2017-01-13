@@ -129,10 +129,7 @@ function createNew() {
     text.style.width = 70 + '%';
     text.style.height = 70 + '%';
     text.style.bottom = 0 + '%';
-    // console.log("top du text");
-    // console.log(text.offsetTop);
-    // console.log(text.style.height);
-    // console.log(postIt.style.height);
+
 
     // bouton bleu
     let color = document.createElement('div');
@@ -224,14 +221,9 @@ function replace(id) {
         parent.style.width = 302+'px';
         parent.style.height = 360+'px';
         createCanvas(parent,number);
-  /*      console.log(parent.offsetTop);  // X
-        console.log(parent.offsetLeft); // Y*/
     }
 }
 
-function Trash(id) {
-    document.getElementById(id).remove();
-}
 
 function mouseDown(event) {
     this.src = 'image/buttons/' + event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g) + 'B.png';
