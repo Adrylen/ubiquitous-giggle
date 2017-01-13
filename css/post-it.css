@@ -3,25 +3,29 @@ textarea {
     resize: none;
     width: 95%;
     height: 70%;
-    background-color: #F0E000;
+    /*display: block;*/
+    background-color: #F8F587;
+    /*margin-left: 10px;
+    margin-bottom: 10%;
+    margin-top: 10px;*/
+    /*margin-left: 1%;*/
     margin-bottom: 2%;
     float: right;
     border: transparent;
 }
-canvas{
-	position: center;
-	margin-left:1px;
-	margin-right: 1px;
-	margin-bottom:1px;
-	margin-top:1px;
-	/*width: 96%;
-	height: 80%;
-	resize:both;*/
-	border: 1px solid #999;
-	border-radius: 20px;
-	display: block;
-	background: #F0E000;
-	cursor: crosshair;
+
+canvas {
+    position: center;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    border: 1px solid #999;
+    border-radius: 20px;
+    display: block;
+    background: #F8F587;
+    cursor: crosshair;
+}
 
 #page {
     border: solid black 1px;
@@ -29,11 +33,11 @@ canvas{
 
 .postIt {
     position: absolute;
-    border: solid #ffb000 1%;
-    background-color: #f0e000;
+    border: solid #F8F587 1%;
+    background-color: #F8F587;
     resize: both;
     overflow: hidden;
-    padding: 9px;
+    /*padding: 9px;*/
 }
 
 .buttonApp {
@@ -65,7 +69,7 @@ canvas{
 }
 
 #yellow {
-    background-color: yellow;
+    background-color: #F8F587;
     border-radius: 50%;
     padding: 9px;
     outline: none;
