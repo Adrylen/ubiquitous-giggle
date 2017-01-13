@@ -208,7 +208,6 @@ function replace(parent) {
     var color = parent.getElementsByClassName('color')[0];
     var text = parent.getElementsByTagName("textarea")[0];
     var canvas = parent.getElementsByTagName("canvas")[0];
-
     if (text === undefined) {
         color.style.visibility = "hidden";
         canvas.remove();
