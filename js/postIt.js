@@ -5,6 +5,7 @@ var painting = false;
 var started = false;
 var size_min = 5;
 
+
 function createNew() {
     number = number + 1;
 
@@ -14,7 +15,7 @@ function createNew() {
     //div principale
     let postIt = document.createElement('div');
     postIt.setAttribute('id', 'postIt' + number);
-    //postIt.setAttribute('draggable', true);
+    postIt.setAttribute('draggable', true);
     postIt.setAttribute('ondragstart', 'drag(event)');
     postIt.classList.add('postIt');
     postIt.style.width = sizeW + 'px';
@@ -29,101 +30,109 @@ function createNew() {
     postIt.appendChild(navigation);
 
     //bouton Hide -> Cacher tous les autres
-    let hide = document.createElement('input');
+    let hide = document.createElement('img');
     hide.type = "button";
     hide.value = "Hide";
+    hide.addEventListener("mousedown", mouseDown);
+    hide.addEventListener("mouseup", mouseUp);
     hide.setAttribute('class', 'buttonHide');
     hide.setAttribute('onclick', 'hide()');
+    hide.setAttribute('src', 'image/buttons/hideH.png');
+
     navigation.appendChild(hide);
 
     //bouton poubelle
-    let trash = document.createElement('button');
-    trash.setAttribute('id', 'trash1');
-    trash.classList.add('buttonApp');
+    let trash = document.createElement('img');
+    trash.type = "button";
+    trash.addEventListener("mousedown", mouseDown);
+    trash.addEventListener("mouseup", mouseUp);
+    trash.setAttribute('class', 'buttonApp');
     trash.setAttribute('onclick', 'Trash("postIt' + number + '")');
+    trash.setAttribute('src', 'image/buttons/trashH.png');
     navigation.appendChild(trash);
 
-    //son icone
-    let iTrash = document.createElement('img');
-    iTrash.setAttribute('src', 'image/buttons/trash.png');
-    trash.appendChild(iTrash);
 
     trash.style.visibility = "hidden";
 
 
     //bouton full screen
-    let fullscreen = document.createElement('button');
+    let fullscreen = document.createElement('img');
+    fullscreen.addEventListener("mousedown", mouseDown);
+    fullscreen.addEventListener("mouseup", mouseUp);
+    fullscreen.type = "button";
     fullscreen.setAttribute('class', 'buttonApp');
-    fullscreen.setAttribute('onclick', 'FullScreen()');
+    fullscreen.setAttribute('onclick', 'fullscreen(' + postIt.id + ')');
+    fullscreen.setAttribute('src', 'image/buttons/fullScreenH.png');
     navigation.appendChild(fullscreen);
 
-    //son icone
-    let iFullscreen = document.createElement('img');
-    iFullscreen.setAttribute('src', 'image/buttons/fullScreen.png');
-    fullscreen.appendChild(iFullscreen);
 
     fullscreen.style.visibility = "hidden";
 
     //bouton turn
-    let turn = document.createElement('button');
+    let turn = document.createElement('img');
+    turn.addEventListener("mousedown", mouseDownS);
+    turn.addEventListener("mouseup", mouseUpS);
+    turn.type = "button";
     turn.setAttribute('class', 'buttonApp');
     //turn.setAttribute('onclick','Turn()');
     turn.addEventListener('click', startRotation);
+    turn.setAttribute('src', 'image/buttons/turnH.png');
     navigation.appendChild(turn);
-
-    //son icone
-    let iTurn = document.createElement('img');
-    iTurn.setAttribute('src', 'image/buttons/turn.png');
-    turn.appendChild(iTurn);
 
     turn.style.visibility = "hidden";
 
     //bouton save
-    let save = document.createElement('button');
+    let save = document.createElement('img');
+    save.addEventListener("mousedown", mouseDown);
+    save.addEventListener("mouseup", mouseUp);
+    save.type = "button";
     save.setAttribute('class', 'buttonApp');
-    save.setAttribute('onclick', 'Save()');
+    // save.setAttribute('onclick', 'Save()');
+    save.setAttribute('src', 'image/buttons/saveH.png');
+    save.addEventListener('click', download);
     navigation.appendChild(save);
 
-    //son icone
-    let iSave = document.createElement('img');
-    iSave.setAttribute('src', 'image/buttons/save.png');
-    save.appendChild(iSave);
 
     save.style.visibility = "hidden";
 
     //bouton full change
-    let change = document.createElement('button');
+    let change = document.createElement('img');
+    change.addEventListener("mousedown", mouseDown);
+    change.addEventListener("mouseup", mouseUp);
+    change.type = "button";
     change.setAttribute('class', 'buttonApp');
     change.setAttribute('onclick', 'replace("postIt"+number+"")');
+    change.setAttribute('src', 'image/buttons/styloH.png');
     navigation.appendChild(change);
 
-    //son icone
-    let ichange = document.createElement('img');
-    ichange.setAttribute('src', 'image/buttons/change.png');
-    change.appendChild(ichange);
 
     change.style.visibility = "hidden";
 
     //bouton move
-    let move = document.createElement('button');
+    let move = document.createElement('img');
+    move.addEventListener("mousedown", mouseDownS);
+    move.addEventListener("mouseup", mouseUpS);
+    move.type = "button";
     move.setAttribute('class', 'buttonApp');
     move.setAttribute('onclick', 'Move("postIt' + number + '")');
+    move.setAttribute('src', 'image/buttons/moveOKH.png');
     navigation.appendChild(move);
 
-    //son icone
-    let iMove = document.createElement('img');
-    iMove.setAttribute('src', 'image/buttons/move.png');
-    move.appendChild(iMove);
 
     move.style.visibility = "hidden";
 
     let text = document.createElement('textarea');
     text.setAttribute('type', 'text');
     postIt.appendChild(text);
+    VKI_attach(text);
     text.setAttribute('style.resize', 'none');
     text.style.width = 70 + '%';
     text.style.height = 70 + '%';
     text.style.bottom = 0 + '%';
+    console.log("top du text");
+    console.log(text.offsetTop);
+    console.log(text.style.height);
+    console.log(postIt.style.height);
 
     // bouton bleu
     let color = document.createElement('div');
@@ -194,6 +203,7 @@ function createNew() {
     postIt.appendChild(color);
 
     document.getElementById('page').appendChild(postIt);
+
 }
 
 function replace(id) {
@@ -203,7 +213,7 @@ function replace(id) {
     var canvas = parent.getElementsByTagName("canvas")[0];
 
     if (text === undefined) {
-      color.style.visibility = "hidden";
+        color.style.visibility = "hidden";
         canvas.remove();
         text = document.createElement("textarea");
         text.setAttribute('type', 'text');
@@ -221,4 +231,26 @@ function replace(id) {
 
 function Trash(id) {
     document.getElementById(id).remove();
+}
+
+function mouseDown(event) {
+    this.src = 'image/buttons/' + event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g) + 'B.png';
+}
+
+function mouseUp(event) {
+    this.src = 'image/buttons/' + event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g) + 'H.png';
+}
+
+function mouseDownS(event) {
+    if (event.target.getAttribute('src').match(/OK/g) !== null)
+        this.src = 'image/buttons/' + event.target.getAttribute('src').match(/[a-zA-Z]+(?=OK[HB]\.png)/g) + 'OKB.png';
+    else
+        this.src = 'image/buttons/' + event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g) + 'B.png';
+}
+
+function mouseUpS(event) {
+    if (event.target.getAttribute('src').match(/OK/g) !== null)
+        this.src = 'image/buttons/' + event.target.getAttribute('src').match(/[a-zA-Z]+(?=OK[HB]\.png)/g) + 'H.png';
+    else
+        this.src = 'image/buttons/' + event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g) + 'OKH.png';
 }

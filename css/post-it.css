@@ -1,14 +1,15 @@
 textarea {
     position: absolute;
     resize: none;
-    width: 80%;
+    width: 95%;
     height: 70%;
     /*display: block;*/
     background-color: #F0E000;
     /*margin-left: 10px;
     margin-bottom: 10%;
     margin-top: 10px;*/
-    margin-left: 44px;
+    /*margin-left: 1%;*/
+    margin-bottom: 2%;
     float: right;
     border: transparent;
 }
@@ -18,98 +19,106 @@ canvas{
 	margin-right: 1px;
 	margin-bottom:1px;
 	margin-top:1px;
-	/*width: 96%;
-	height: 80%;
-	resize:both;*/
 	border: 1px solid #999;
 	border-radius: 20px;
 	display: block;
 	background: #F0E000;
 	cursor: crosshair;
-}
+
 
 #page {
     border: solid black 1px;
 }
 
-.postIt
-{
-	position: absolute;
-	border: solid #ffb000 1%;
-	background-color: #f0e000;
-	resize: both;
-	overflow: hidden;
-	padding: 9px;
+.postIt {
+    position: absolute;
+    border: solid #ffb000 1%;
+    background-color: #f0e000;
+    resize: both;
+    overflow: hidden;
+    padding: 9px;
 }
 
 .buttonApp {
-    width: 44px;
-    height: 30px;
+    width: 14%;
+    height: auto;
+    max-height: auto;
+    max-width: 30px;
 }
 
-#red{
-  background-color: red ;
-  border-radius:50%;
-	padding: 9px;
-	outline: none;
+#red {
+    background-color: red;
+    border-radius: 50%;
+    padding: 9px;
+    outline: none;
 }
 
-#blue{
-  background-color: blue;
-  border-radius:50%;
-	padding: 9px;
-	outline:none;
+#blue {
+    background-color: blue;
+    border-radius: 50%;
+    padding: 9px;
+    outline: none;
 }
-#green{
-  background-color: green;
-  border-radius:50%;
-	padding: 9px;
-	outline:none;
+
+#green {
+    background-color: green;
+    border-radius: 50%;
+    padding: 9px;
+    outline: none;
 }
-#yellow{
-  background-color: yellow;
-  border-radius:50%;
-	padding: 9px;
-	outline:none;
+
+#yellow {
+    background-color: yellow;
+    border-radius: 50%;
+    padding: 9px;
+    outline: none;
 }
-#black{
-  background-color:black ;
-  border-radius:50%;
-	padding: 9px;
-	outline:none;
+
+#black {
+    background-color: black;
+    border-radius: 50%;
+    padding: 9px;
+    outline: none;
 }
-#purple{
-  background-color:purple ;
-  border-radius:50%;
-	padding: 9px;
-	outline:none;
+
+#purple {
+    background-color: purple;
+    border-radius: 50%;
+    padding: 9px;
+    outline: none;
 }
-#pink{
-  background-color: pink;
-  border-radius:50%;
-  padding: 9px;
-	outline:none;
+
+#pink {
+    background-color: pink;
+    border-radius: 50%;
+    padding: 9px;
+    outline: none;
 }
-#orange{
-  background-color: orange;
-  border-radius:50%;
-	padding: 9px;
-	outline:none;
+
+#orange {
+    background-color: orange;
+    border-radius: 50%;
+    padding: 9px;
+    outline: none;
 }
-#brown{
-  background-color: brown;
-  border-radius:50%;
-	padding: 9px;
-	outline:none;
+
+#brown {
+    background-color: brown;
+    border-radius: 50%;
+    padding: 9px;
+    outline: none;
 }
-#white{
-  background-color: white;
-  border-radius:50%;
-	padding: 9px;
-	outline:none;
+
+#white {
+    background-color: white;
+    border-radius: 50%;
+    padding: 9px;
+    outline: none;
 }
 
 .buttonHide {
-    width: 44px;
-    height: 30px;
+    width: 14%;
+    height: auto;
+    max-height: auto;
+    max-width: 30px;
 }

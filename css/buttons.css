@@ -3,12 +3,7 @@ body {
     background-size: 100%;
 }
 
-.button {
-    width: 44px;
-    height: auto;
-}
-
-img {
-    width: 50%;
-    height: 50%;
+.button{
+  width: 30px;
+  height: auto;
 }
