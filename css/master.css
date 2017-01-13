@@ -16,16 +16,16 @@
 
 #postItGenerate {
     float: left;
-    width: 15%;
-    height: 25%;
+    width: 10%;
+    height: 20%;
 }
 
 #resizeAuto {
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
     position: absolute;
-    bottom: 132.8px;
-    left: 20%;
+    bottom: 25%;
+    left: 25%;
     /*background-color: blue;*/
     border: solid #aaaaaa;
 }

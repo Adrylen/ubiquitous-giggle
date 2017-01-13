@@ -32,14 +32,16 @@ function drop(event) {
             values.width = dm.offsetWidth;
             values.height = dm.offsetHeight;
             event.target.appendChild(document.getElementById(offset[2]));
+            dm.classList.remove('notAuto');
+            dm.classList.add('intoAuto');
             dm.style.height = "100%";
             dm.style.width = "100%";
             //console.log(dm.style.width);
-            dm.classList[1] = "intoAuto";
             dm.style.left = 0;
             dm.style.top = 0;
             dm.style.transform = "";
         }
+        console.log(dm);
         autoDisplayOccupate = true;
     } else {
         event.preventDefault();
@@ -55,6 +57,7 @@ function drop_outside(event) {
     if (inAutoDisplay == 0) {
         var offset = event.dataTransfer.getData("text").split(',');
         var dm = document.getElementById(offset[2]);
+        console.log(dm);
         if (dm.classList[1] === "intoAuto") {
             dm.style.height = values.height - 6 + "px";
             dm.style.width = values.width - 6 + "px";
@@ -66,6 +69,7 @@ function drop_outside(event) {
             dm.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
             dm.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
         }
+
 
         if (dm.classList[1] != "notAuto" || dm.classList[1] === "") {
             dm.classList[1] = "notAuto";
