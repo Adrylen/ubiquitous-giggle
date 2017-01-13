@@ -18,9 +18,9 @@ canvas{
 	margin-right: 1px;
 	margin-bottom:1px;
 	margin-top:1px;
-	width: 96%;
+	/*width: 96%;
 	height: 80%;
-	resize:both;
+	resize:both;*/
 	border: 1px solid #999;
 	border-radius: 20px;
 	display: block;

@@ -20,8 +20,8 @@ function createCanvas(parent,number) {
 
     //Incrément du nombre
     mycanva.id = "canvapostIt"+number;
-    mycanva.style.width = 300+'px';
-    mycanva.style.height= 300+'px';
+    mycanva.width = 300;
+    mycanva.height= 300;
     width =  300;
     height = 300;
     var canva = $(mycanva);
@@ -31,17 +31,10 @@ function createCanvas(parent,number) {
 
     // Trait arrondi :
     context.lineJoin = 'round';
-    context.lineCap = 'round';
+    context.lineCap = 'round';-
 
     mycanva.addEventListener("mousedown", function(e) {
         painting = true;
-        var canva = $(mycanva);
-
-        //Création du context
-        context = canva[0].getContext('2d');
-        // Coordonnées de la souris :
-        cursorX = (e.pageX - this.offsetLeft -parent.offsetLeft);
-        cursorY = (e.pageY - this.offsetTop - parent.offsetTop);
     }, false);
 
     window.addEventListener("mouseup", function(e) {
@@ -63,19 +56,17 @@ function createCanvas(parent,number) {
             // Set Coordonnées de la souris :
             // width_brush = (width_brush*100)/width;
 
-            console.log(e.pageX - mycanva.offsetLeft, e.pageY - mycanva.offsetTop, parent.offsetTop);
-            // cursorX = (e.pageX+parent.offsetTop)-10; // 10 = décalage du curseur
-            // cursorY = (e.pageY+parent.offsetLeft)-10;
-            cursorX = parent.offsetLeft- mycanva.offsetLeft + e.pageX; // 10 = décalage du curseur
-            cursorY = parent.offsetTop - mycanva.offsetTop + e.pageY;
+            cursorY = (-parent.offsetTop - mycanva.offsetTop + e.pageY);
+            cursorX = -parent.offsetLeft - mycanva.offsetLeft + e.pageX;
+
             // Dessine une ligne :
-            drawLine();
+            drawLine(cursorX, cursorY);
         }
     }, false);
 }
 
 // Fonction qui dessine une ligne :
-function drawLine() {
+function drawLine(cursorX, cursorY) {
     // Si c'est le début, j'initialise
     if (!started) {
         // Je place mon curseur pour la première fois :
@@ -85,43 +76,11 @@ function drawLine() {
     }
     // Sinon je dessine
     else {
-      if ( cursorX<300 ){
-        if( cursorX>0){
-          if(cursorY<300){
-            if(cursorY>0){
-              context.lineTo(cursorX, cursorY);
-              context.strokeStyle = color;
-              context.lineWidth = width_brush;
-              context.stroke();
-            }
-            else{
-              context.lineTo(cursorX, 0);
-              context.strokeStyle = color;
-              context.lineWidth = width_brush;
-              context.stroke();
-            }
-          }
-          else{
-            context.lineTo(cursorX,300);
-            context.strokeStyle = color;
-            context.lineWidth = width_brush;
-            context.stroke();
-          }
-        }
-        else{
-          context.lineTo(0,cursorY);
-          context.strokeStyle = color;
-          context.lineWidth = width_brush;
-          context.stroke();
-        }
-    }
-    else{
-      context.moveTo(300,cursorY);
+      console.log(`${cursorX}, ${cursorY}`);
+      context.lineTo(cursorX, cursorY);
       context.strokeStyle = color;
       context.lineWidth = width_brush;
       context.stroke();
-    }
-
     }
 }
 
