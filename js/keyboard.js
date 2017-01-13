@@ -7606,7 +7606,6 @@ var VKI_attach, VKI_close;
     };*/
     this.VKI_position = function(force) {
         if (self.VKI_target) {
-            console.log(self.VKI_target);
             var kPos = VKI_findPos(self.VKI_keyboard),
                 wDim = VKI_innerDimensions(),
                 sDis = VKI_scrollDist();
@@ -7639,9 +7638,6 @@ var VKI_attach, VKI_close;
                         //if (self.VKI_isIE6) self.VKI_iframe.style.display = (top < 0 || left < 0 || bottom < 0 || right < 0) ? "none" : "";
                     }
                 }
-                console.log(iPos[1]);
-                console.log(fudge);
-                console.log(iPos[1] - ((self.VKI_target.keyboardPosition == "fixed" && !self.VKI_isIE && !self.VKI_isMoz) ? sDis[1] : 0) + fudge + "px");
                 self.VKI_keyboard.style.top = iPos[1] - ((self.VKI_target.keyboardPosition == "fixed" && !self.VKI_isIE && !self.VKI_isMoz) ? sDis[1] : 0) + fudge + "px";
                 self.VKI_keyboard.style.left = Math.max(10, Math.min(wDim[0] - self.VKI_keyboard.offsetWidth - 25, iPos[0])) + "px";
                 if (self.VKI_isIE6) {
@@ -7735,7 +7731,6 @@ var VKI_attach, VKI_close;
     VKI_addListener(window, 'scroll', this.VKI_position, false);
     this.VKI_kbsize();
     VKI_addListener(window, 'load', VKI_buildKeyboardInputs, false);
-    console.log("imhere");
     if (document.getElementById('postItGenerate')) {
         VKI_addListener(document.getElementById('postItGenerate'), 'click', VKI_buildKeyboardInputs, false);
     }
