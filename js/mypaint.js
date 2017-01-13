@@ -56,7 +56,7 @@ function createCanvas(parent) {
             // Set Coordonnées de la souris :
             cursorY = -parent.offsetTop - mycanva.offsetTop + e.pageY;
             cursorX = -parent.offsetLeft - mycanva.offsetLeft + e.pageX;
-            
+
             // Dessine une ligne :
             drawLine(cursorX, cursorY);
         }
