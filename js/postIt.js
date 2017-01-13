@@ -218,8 +218,10 @@ function replace(parent) {
     } else {
         color.style.visibility = 'visible';
         text.remove();
-        parent.style.width = 302 + 'px';
-        parent.style.height = 360 + 'px';
+        if (parent.classList[1] == "notAuto") {
+            parent.style.width = 302 + 'px';
+            parent.style.height = 360 + 'px';
+        }
         createCanvas(parent);
     }
 }
