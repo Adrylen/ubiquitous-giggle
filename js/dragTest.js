@@ -34,14 +34,16 @@ function drop(event) {
             values.width = dm.offsetWidth;
             values.height = dm.offsetHeight;
             event.target.appendChild(document.getElementById(offset[2]));
+            dm.classList.remove('notAuto');
+            dm.classList.add('intoAuto');
             dm.style.height = "100%";
             dm.style.width = "100%";
             //console.log(dm.style.width);
-            dm.classList[1] = "intoAuto";
             dm.style.left = 0;
             dm.style.top = 0;
             dm.style.transform = "";
         }
+        console.log(dm);
         autoDisplayOccupate = true;
     } else {
         event.preventDefault();
@@ -72,7 +74,8 @@ function drop_outside(event) {
 
 
         if (dm.classList[1] != "notAuto" || dm.classList[1] === "") {
-            dm.classList[1] = "notAuto";
+            dm.classList.remove('intoAuto');
+            dm.classList.add('notAuto');
             event.target.appendChild(document.getElementById(offset[2]));
         }
         event.preventDefault();

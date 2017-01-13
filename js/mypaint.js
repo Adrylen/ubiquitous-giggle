@@ -20,11 +20,10 @@ function createCanvas(parent) {
 
     //Incrément du nombre
     mycanva.id = document.getElementById(parent);
-    console.log(mycanva);
-    mycanva.width = 300;
-    mycanva.height= 300;
-    width =  300;
-    height = 300;
+    mycanva.width = 300 ;
+    mycanva.height= 300 ;
+
+
     var canva = $(mycanva);
 
     //Création du context
@@ -55,7 +54,7 @@ function createCanvas(parent) {
         context = canva[0].getContext('2d');
         if (painting) {
             // Set Coordonnées de la souris :
-            cursorY = (-parent.offsetTop - mycanva.offsetTop + e.pageY);
+            cursorY = -parent.offsetTop - mycanva.offsetTop + e.pageY;
             cursorX = -parent.offsetLeft - mycanva.offsetLeft + e.pageX;
 
             // Dessine une ligne :
@@ -75,7 +74,6 @@ function drawLine(cursorX, cursorY) {
     }
     // Sinon je dessine
     else {
-      console.log(`${cursorX}, ${cursorY}`);
       context.lineTo(cursorX, cursorY);
       context.strokeStyle = color;
       context.lineWidth = width_brush;
@@ -103,9 +101,4 @@ $("#couleurs a").each(function() {
 
 function changeColor(id) {
   color = id;
-}
-
-function clean(){
-  color = "yellow"
-  width_brush = 10;
 }
