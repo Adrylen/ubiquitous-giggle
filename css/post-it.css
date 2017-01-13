@@ -3,12 +3,7 @@ textarea {
     resize: none;
     width: 95%;
     height: 70%;
-    /*display: block;*/
     background-color: #F0E000;
-    /*margin-left: 10px;
-    margin-bottom: 10%;
-    margin-top: 10px;*/
-    /*margin-left: 1%;*/
     margin-bottom: 2%;
     float: right;
     border: transparent;
@@ -19,12 +14,14 @@ canvas{
 	margin-right: 1px;
 	margin-bottom:1px;
 	margin-top:1px;
+	/*width: 96%;
+	height: 80%;
+	resize:both;*/
 	border: 1px solid #999;
 	border-radius: 20px;
 	display: block;
 	background: #F0E000;
 	cursor: crosshair;
-
 
 #page {
     border: solid black 1px;

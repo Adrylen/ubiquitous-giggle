@@ -203,7 +203,6 @@ function createNew() {
     postIt.appendChild(color);
 
     document.getElementById('page').appendChild(postIt);
-
 }
 
 function replace(id) {
@@ -224,8 +223,6 @@ function replace(id) {
         parent.style.width = 302+'px';
         parent.style.height = 360+'px';
         createCanvas(parent,number);
-  /*      console.log(parent.offsetTop);  // X
-        console.log(parent.offsetLeft); // Y*/
     }
 }
 
