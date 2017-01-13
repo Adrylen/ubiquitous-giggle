@@ -211,6 +211,7 @@ function replace(parent) {
         text = document.createElement("textarea");
         text.setAttribute('type', 'text');
         parent.appendChild(text);
+        VKI_attach(text);
     } else {
         color.style.visibility = 'visible';
         text.remove();
