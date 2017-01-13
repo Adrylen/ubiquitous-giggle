@@ -36,7 +36,8 @@ function createNew() {
     hide.addEventListener("mousedown", mouseDown);
     hide.addEventListener("mouseup", mouseUp);
     hide.setAttribute('class', 'buttonHide');
-    hide.setAttribute('onclick', 'hide()');
+    hide.setAttribute('toHide',true);
+    hide.setAttribute('onclick', 'hide('+postIt.id+')');
     hide.setAttribute('src', 'image/buttons/hideH.png');
 
     navigation.appendChild(hide);

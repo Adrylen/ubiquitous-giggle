@@ -1,5 +1,3 @@
-var areHidden = true;
-
 function Trash() {
     alert("tu vas jeter un truc là");
 }
@@ -37,16 +35,30 @@ function Close() {
     alert("es-tu sûr de vouloir fermer ça?");
 }
 
-function hide() {
-    if (areHidden) {
-        for (var i = 0; i < document.getElementsByClassName("buttonApp").length; i++) {
-            document.getElementsByClassName("buttonApp")[i].style.visibility = "visible";
+function hide(element) {
+    let div = element.getElementsByClassName('boutons')[0];
+    let button = div.getElementsByClassName('buttonHide')[0];
+    // console.log(typeof button.getAttribute('toHide'));
+    if (button.getAttribute('toHide') === "true") {
+        for (var i = 0; i < div.getElementsByClassName("buttonApp").length; i++) {
+            div.getElementsByClassName("buttonApp")[i].style.visibility = "visible";
         }
-        areHidden = false;
+        button.setAttribute('toHide', 'false');
     } else {
-        for (var i = 0; i < document.getElementsByClassName("buttonApp").length; i++) {
-            document.getElementsByClassName("buttonApp")[i].style.visibility = "hidden";
+        for (var i = 0; i < div.getElementsByClassName("buttonApp").length; i++) {
+            div.getElementsByClassName("buttonApp")[i].style.visibility = "hidden";
         }
-        areHidden = true;
+        button.setAttribute('toHide', 'true');
     }
+    // if (areHidden) {
+    //     for (var i = 0; i < document.getElementsByClassName("buttonApp").length; i++) {
+    //         document.getElementsByClassName("buttonApp")[i].style.visibility = "visible";
+    //     }
+    //     areHidden = false;
+    // } else {
+    //     for (var i = 0; i < document.getElementsByClassName("buttonApp").length; i++) {
+    //         document.getElementsByClassName("buttonApp")[i].style.visibility = "hidden";
+    //     }
+    //     areHidden = true;
+    // }
 }
