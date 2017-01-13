@@ -33,7 +33,8 @@ canvas {
 
 .postIt {
     position: absolute;
-    border: solid #F8F587 1%;
+    border: solid #000000 1px;
+    box-shadow: 3px 3px 0px #aaa;
     background-color: #F8F587;
     resize: both;
     overflow: hidden;

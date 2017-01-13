@@ -87,7 +87,6 @@ function createNew() {
     save.addEventListener("mouseup", mouseUp);
     save.type = "button";
     save.setAttribute('class', 'buttonApp');
-    // save.setAttribute('onclick', 'Save()');
     save.setAttribute('src', 'image/buttons/saveH.png');
     save.addEventListener('click', download);
     navigation.appendChild(save);
@@ -101,7 +100,7 @@ function createNew() {
     change.addEventListener("mouseup", mouseUp);
     change.type = "button";
     change.setAttribute('class', 'buttonApp');
-    change.setAttribute('onclick', 'replace("postIt"+number+"")');
+    change.setAttribute('onclick', 'replace('+postIt.id+')');
     change.setAttribute('src', 'image/buttons/styloH.png');
     navigation.appendChild(change);
 
@@ -200,11 +199,9 @@ function createNew() {
     postIt.appendChild(color);
 
     document.getElementById('page').appendChild(postIt);
-
 }
 
-function replace(id) {
-    var parent = document.getElementById(id);
+function replace(parent) {
     var color = parent.getElementsByClassName('color')[0];
     var text = parent.getElementsByTagName("textarea")[0];
     var canvas = parent.getElementsByTagName("canvas")[0];
@@ -215,12 +212,13 @@ function replace(id) {
         text = document.createElement("textarea");
         text.setAttribute('type', 'text');
         parent.appendChild(text);
+        VKI_attach(text);
     } else {
         color.style.visibility = 'visible';
         text.remove();
         parent.style.width = 302+'px';
         parent.style.height = 360+'px';
-        createCanvas(parent,number);
+        createCanvas(parent);
     }
 }
 

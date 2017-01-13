@@ -11,7 +11,7 @@ var nbCanvas = 0;
 var height;
 var width;
 
-function createCanvas(parent,number) {
+function createCanvas(parent) {
     // Création du canvas
     var mycanva = document.createElement("canvas");
     var div = document.createElement("div");
@@ -19,7 +19,8 @@ function createCanvas(parent,number) {
     parent.appendChild(mycanva);
 
     //Incrément du nombre
-    mycanva.id = "canvapostIt"+number;
+    mycanva.id = document.getElementById(parent);
+    console.log(mycanva);
     mycanva.width = 300;
     mycanva.height= 300;
     width =  300;
@@ -54,8 +55,6 @@ function createCanvas(parent,number) {
         context = canva[0].getContext('2d');
         if (painting) {
             // Set Coordonnées de la souris :
-            // width_brush = (width_brush*100)/width;
-
             cursorY = (-parent.offsetTop - mycanva.offsetTop + e.pageY);
             cursorX = -parent.offsetLeft - mycanva.offsetLeft + e.pageX;
 
@@ -105,6 +104,7 @@ $("#couleurs a").each(function() {
 function changeColor(id) {
   color = id;
 }
+
 function clean(){
   color = "yellow"
   width_brush = 10;
