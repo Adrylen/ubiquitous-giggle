@@ -41,6 +41,8 @@ canvas {
     /*padding: 9px;*/
 }
 
+/*boutons du post-it*/
+
 .buttonApp {
     width: 14%;
     height: auto;
@@ -48,6 +50,7 @@ canvas {
     max-width: 30px;
 }
 
+/*pastilles de couleur du canevas*/
 #red, #blue, #green, #yellow, #black, #purple, #pink, #orange, #brown, #white {
   border-radius: 50%;
   padding: 9px;

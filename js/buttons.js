@@ -1,9 +1,10 @@
 let screenStyle;
-
+/*fonction pour le bouton poubelle du post-it*/
 function Trash(id) {
     document.getElementById(id).remove();
 }
 
+/*fonction pour le bouton plein écran du post-it*/
 function fullscreen(element) {
 	if(Object.keys(element.classList).some(key => element.classList[key] == "full") === false) {
 		element.classList.add("full");
@@ -24,6 +25,7 @@ function fullscreen(element) {
 	}
 }
 
+/*fonction du bouton tourner de l'ecran principal, permet de touner de 180° la page entière*/
 function FullTurn() {
     if(document.getElementById('page').style.transform === "rotate(180deg)")
         document.getElementById('page').style.transform = "rotate(0deg)";
@@ -31,7 +33,7 @@ function FullTurn() {
         document.getElementById('page').style.transform = "rotate(180deg)";
 }
 
-
+/*fonction du bouton de déplacement du post-it, permet de rendre possible ou non le déplacement du post-it*/
 function Move(name) {
     var currentPostit = document.getElementById(name);
     if (!currentPostit.draggable) {
@@ -42,7 +44,7 @@ function Move(name) {
 
 }
 
-
+/*fonction du bouton hide du post-it, permet de masquer ou non les différents boutons utitlisés dans le post-it*/
 function hide(element) {
     let div = element.getElementsByClassName('boutons')[0];
     let button = div.getElementsByClassName('buttonHide')[0];

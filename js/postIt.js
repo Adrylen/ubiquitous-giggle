@@ -223,7 +223,7 @@ function replace(parent) {
     }
 }
 
-
+//les fonctions suivantes permettent de faire les animations de click des boutons dans le post-it
 function mouseDown(event) {
     this.src = 'image/buttons/' + event.target.getAttribute('src').match(/[a-zA-Z]+(?=[HB]\.png)/g) + 'B.png';
 }

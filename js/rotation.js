@@ -1,12 +1,3 @@
-var rotated = false;
-
-function fixed_rotation(id, deg) {
-    let match_array = document.getElementById(id).style.transform.match(/-?[0-9]+/g);
-    deg += (match_array !== null) ? parseInt(match_array[0]) : 0;
-    document.getElementById(id).style.transform = "rotate("+deg+"deg)";
-}
-
-
 let x0,y0;
 let x1,y1;
 let d01,d12,scalaire;
