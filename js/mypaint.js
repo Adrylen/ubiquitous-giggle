@@ -54,8 +54,6 @@ function createCanvas(parent,number) {
         context = canva[0].getContext('2d');
         if (painting) {
             // Set Coordonnées de la souris :
-            // width_brush = (width_brush*100)/width;
-
             cursorY = (-parent.offsetTop - mycanva.offsetTop + e.pageY);
             cursorX = -parent.offsetLeft - mycanva.offsetLeft + e.pageX;
 
@@ -105,6 +103,7 @@ $("#couleurs a").each(function() {
 function changeColor(id) {
   color = id;
 }
+
 function clean(){
   color = "yellow"
   width_brush = 10;
