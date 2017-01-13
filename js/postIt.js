@@ -9,8 +9,9 @@ var size_min = 5;
 function createNew() {
     number = number + 1;
 
-    var sizeW = document.getElementById('postItGenerate').offsetWidth;
-    var sizeH = document.getElementById('postItGenerate').offsetHeight;
+    let generate = document.getElementById('postItGenerate');
+    var sizeW = generate.offsetWidth;
+    var sizeH = generate.offsetHeight;
 
     //div principale
     let postIt = document.createElement('div');
@@ -18,6 +19,8 @@ function createNew() {
     postIt.setAttribute('draggable', true);
     postIt.setAttribute('ondragstart', 'drag(event)');
     postIt.classList.add('postIt');
+    postIt.style.top = generate.style.top;
+    postIt.style.left = generate.style.left;
     postIt.style.width = sizeW + 'px';
     postIt.style.height = sizeH + 'px';
 
